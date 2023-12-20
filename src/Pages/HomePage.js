@@ -3,6 +3,7 @@ import Hero from "../componants/Hero";
 import pizza from "../assets/hero-image.png";
 import ProductsCatgory from "../componants/ProductsCatgory";
 import GroupingCard from "../componants/GroupingCard";
+import SalesCenters from "../componants/Salescenters";
 
 
 export default function HomePage(){
@@ -15,5 +16,6 @@ export default function HomePage(){
                 <ProductsCatgory/>
              </section>
              <GroupingCard/>
+             <SalesCenters/>
            </main>
 };
