@@ -9,6 +9,9 @@ module.exports = {
         purpleSnapp: {
           300: '#ff00A6',
         },
+        margin: {
+          '400px': '400px',
+        }
     },
   },
   plugins: [],
