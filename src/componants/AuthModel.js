@@ -3,8 +3,12 @@ import { useEffect } from 'react';
 import useAuthContext from '../Hooks/useAuthContext';
 import SnappLogo from '../assets/SnappLogo';
 import { useForm } from "react-hook-form";
+import { IoMdClose } from "react-icons/io";
 
-export default function AuthModel() {
+
+export default function AuthModel(){
+
+
   const {setModel, logIn} = useAuthContext();
   const { register, handleSubmit } = useForm();
 
@@ -25,12 +29,12 @@ export default function AuthModel() {
   return ReactDOM.createPortal(
     <div className="z-40 relative">
       <div
-        onClick={() => setModel(false)}
+        onClick={() => setModel(null)}
         className="fixed inset-0 bg-gray-300 opacity-50"
       ></div>
       <div dir='rtl' className="fixed inset-x-1/3 top-44 max-h-fit px-8 py-4 rounded-lg shadow-md bg-gray-50 flex flex-col">
         <div className='flex justify-between items-center'>
-          <div onClick={() => setModel(false)}>x</div>
+          <IoMdClose className = "cursor-pointer" onClick={() => setModel(false)}/>
           <SnappLogo className="w-14"/>
         </div>
         <div className='mb-8'>
@@ -49,5 +53,5 @@ export default function AuthModel() {
     </div>,
     document.querySelector('.modal-container')
   );
-}
+};
 

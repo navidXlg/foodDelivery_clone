@@ -20,4 +20,4 @@ export default function HomePage(){
              <SalesCenters/>
              <Footer/>
            </main>
-};
+   };

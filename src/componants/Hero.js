@@ -1,12 +1,17 @@
+import useAuthContext from "../Hooks/useAuthContext";
+import MapModel from "./MapModel";
 
 
 
 export default function Hero (){
 
+
+    const {setModel, model} = useAuthContext();
     return  <div className="max-w-lg absolute top-1/3 text-right right-5">
+            {model === "map" ? <MapModel/> : null}
               <p className="text-5xl mb-2">سفارش آنلاین غذا</p>
               <p className="text-lg mb-8">سفارش آنلاین غذا میوه شیرینی </p>
-                <form>   
+                <form onClick={() => setModel("map")}>   
                     <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                     <div className="relative">
                         <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 text-right outline-none shadow-2xl  rounded-3xl bg-gray-50 " placeholder="آدرس خودتان راوارد کنید" required/>
@@ -18,4 +23,4 @@ export default function Hero (){
                     </div>
                 </form>
             </div>
-}
+};

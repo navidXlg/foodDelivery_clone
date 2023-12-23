@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 export default function AuthProvider({children}){
 
-    const [model, setModel] = useState(false);
+    const [model, setModel] = useState(null);
 
     const logIn = (creadintial) => {
         console.log(creadintial)
