@@ -2,17 +2,13 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useState, useRef, useMemo, useCallback } from "react";
 
 const center = {
-    lat: 51.505,
-    lng: -0.09,
+    lat: 35.721,
+    lng: 51.334,
   }
 
 export default function Map({className}){
 
-
-
-      
-
-      return<MapContainer className = {className}  center={{lat:51.505, lng: -0.09}} zoom={13} scrollWheelZoom={false}>
+      return<MapContainer className = {className}  center={center} zoom={13} scrollWheelZoom={false}>
                 <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -12,7 +12,7 @@ export default function HomePage(){
     return <main>
              <section className="mt-16 bg-gray-100 relative mx-24">
                 <Navabar/>
-                <img src={pizza} className=" z-20 relative"/>
+                <img src={pizza} className="z-20 relative"/>
                 <Hero/>
                 <ProductsCatgory/>
              </section>

@@ -43,7 +43,7 @@ export default function ProductsCatgory(){
        }
     ]
 
-    return <div className="flex items-center justify-between w-full py-5 rounded-lg  px-36 bg-gray-400 absolute top-3/4 z-30">
+    return <div className="flex items-center justify-between w-full py-5 rounded-lg  px-36 bg-gray-400 absolute top-3/4 z-40">
             {
              imges.map(item => 
              <div className="w-10 flex flex-col items-center">
