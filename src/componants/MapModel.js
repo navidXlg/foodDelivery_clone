@@ -23,7 +23,7 @@ export default function MapModel(){
         <div>
           <div
             onClick={() => setModel(false)}
-            className="fixed inset-0 z-30 bg-gray-300 opacity-65"
+            className="fixed inset-0 z-40 bg-gray-300 opacity-65"
           ></div>
           <div dir="rtl" className="rounded-lg shadow-md fixed inset-x-1/4 top-24 max-h-fit p-10 bg-white z-40">
           <IoMdClose className = "cursor-pointer" onClick={() => setModel(null)}/>

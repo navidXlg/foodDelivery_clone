@@ -7,7 +7,7 @@ export default function Hero (){
 
 
     const {setModel, model} = useAuthContext();
-    return  <div className="max-w-lg absolute top-1/3 text-right right-5">
+    return  <div className="max-w-lg absolute top-1/3 text-right right-10">
             {model === "map" ? <MapModel/> : null}
               <p className="text-5xl mb-2">سفارش آنلاین غذا</p>
               <p className="text-lg mb-8">سفارش آنلاین غذا میوه شیرینی </p>
