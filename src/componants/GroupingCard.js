@@ -54,7 +54,7 @@ export default function GroupingCard(){
         }
     ]
 
-    return <div className="mt-16">
+    return <div className="mt-16 mx-24">
              <div className="text-right mb-9 font-bold">دسته بندی</div>
              <div className="grid grid-cols-6 gap-x-4 gap-y-8">
              {
