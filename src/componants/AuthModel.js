@@ -5,12 +5,12 @@ import SnappLogo from '../assets/SnappLogo';
 import { useForm } from "react-hook-form";
 
 export default function AuthModel() {
-  const {setModel} = useAuthContext();
+  const {setModel, logIn} = useAuthContext();
   const { register, handleSubmit } = useForm();
 
-  const formSubmit = (data) => {
-    setModel(false);
-  }
+  const formSubmit = (creadintial) => {
+    logIn(creadintial)
+  };
 
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
