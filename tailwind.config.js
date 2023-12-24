@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         purpleSnapp: {
           300: '#ff00A6',
+          400: '#fff5fc'
         },
         },
         screens: {

@@ -1,6 +1,8 @@
 import SnappLogo from "../assets/SnappLogo";
-
-
+import { AiOutlineInstagram } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { PiTelegramLogoDuotone } from "react-icons/pi";
+import { SlSocialTwitter } from "react-icons/sl";
 
 
 export default function Footer(){
@@ -16,11 +18,11 @@ export default function Footer(){
                         <p className="text-gray-800 text-sm">تجربه سفارش غذا، از زودفود تا اسنپ‌فود</p>
                     </div> 
                 </div>
-                    <ul className="flex items-center justify-end gap-3 ">
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                        <li>D</li>
+                    <ul className="flex items-center text-xl mt-5 justify-end gap-9">
+                        <li className="bg-white rounded-full p-3 shadow-lg"><AiOutlineInstagram/></li>
+                        <li className="bg-white rounded-full p-3 shadow-lg"><FaLinkedinIn/></li>
+                        <li className="bg-white rounded-full p-3 shadow-lg"><PiTelegramLogoDuotone/></li>
+                        <li className="bg-white rounded-full p-3 shadow-lg"><SlSocialTwitter/></li>
                     </ul>
               </div>
               <div className=" flex items-center gap-44 text-xs font-semibold text-gray-700">
