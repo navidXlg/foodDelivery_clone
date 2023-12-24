@@ -6,7 +6,7 @@ import Button from "./Button";
 
 export default function SalesCenters(){
 
-    return <div className="bg-gray-100 max-w-screen-2xl px-10 flex items-center justify-between mx-24 mt-16 text-right">
+    return <div className="bg-gray-100 max-w-screen-2xl 3xl:mx-auto  px-10 flex items-center justify-between mx-24 mt-16 text-right">
               <div>
                 <img src="https://snappfood.ir/static/images/vendor_pic.png"/>
               </div>

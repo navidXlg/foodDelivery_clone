@@ -6,8 +6,9 @@ import SnappLogo from "../assets/SnappLogo";
 export default function Footer(){
 
 
-    return <div className="flex justify-between bg-gray-100 px-12 py-24 mt-5" dir="rtl">
-              <div>
+    return <div className="bg-gray-100 px-12 py-24 mt-5" dir="rtl">
+            <div className="flex justify-between max-w-7xl 2xl:mx-auto">
+              <div className="">
                 <div className="flex items-center justify-between gap-4 ">
                     <SnappLogo className = "w-20"/>   
                     <div>
@@ -40,5 +41,6 @@ export default function Footer(){
               <div>
                 <img src="https://snappfood.ir/static/images/senf.png"/>
               </div>
+              </div>
            </div>
-}
+};

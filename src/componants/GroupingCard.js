@@ -55,7 +55,7 @@ export default function GroupingCard(){
         }
     ]
 
-    return <div className="mt-16 mx-24 max-w-screen-2xl">
+    return <div className="mt-16 mx-24 max-w-screen-2xl 3xl:mx-auto ">
              <div className="text-right mb-9 font-bold">دسته بندی</div>
              <div className="grid grid-cols-6 gap-x-4 gap-y-8">
              {
