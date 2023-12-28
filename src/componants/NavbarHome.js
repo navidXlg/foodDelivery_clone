@@ -6,7 +6,7 @@ import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 
 
 
-export default function Navabar(){
+export default function NavabarHome(){
 
    const {setModel,  model} = useAuthContext();
 
