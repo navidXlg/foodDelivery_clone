@@ -1,13 +1,16 @@
 import SnappLogo from "../assets/SnappLogo";
-
-
+import { AiOutlineInstagram } from "react-icons/ai";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { PiTelegramLogoDuotone } from "react-icons/pi";
+import { SlSocialTwitter } from "react-icons/sl";
 
 
 export default function Footer(){
 
 
-    return <div className="flex justify-between bg-gray-100 px-12 py-24 mt-5" dir="rtl">
-              <div>
+    return <div className="bg-gray-100 px-12 py-24 mt-5" dir="rtl">
+            <div className="flex justify-between max-w-7xl 2xl:mx-auto">
+              <div className="">
                 <div className="flex items-center justify-between gap-4 ">
                     <SnappLogo className = "w-20"/>   
                     <div>
@@ -15,11 +18,11 @@ export default function Footer(){
                         <p className="text-gray-800 text-sm">تجربه سفارش غذا، از زودفود تا اسنپ‌فود</p>
                     </div> 
                 </div>
-                    <ul className="flex items-center justify-end gap-3 ">
-                        <li>A</li>
-                        <li>B</li>
-                        <li>C</li>
-                        <li>D</li>
+                    <ul className="flex items-center text-xl mt-5 justify-end gap-9">
+                        <li className="bg-white rounded-full p-3 shadow-lg"><AiOutlineInstagram/></li>
+                        <li className="bg-white rounded-full p-3 shadow-lg"><FaLinkedinIn/></li>
+                        <li className="bg-white rounded-full p-3 shadow-lg"><PiTelegramLogoDuotone/></li>
+                        <li className="bg-white rounded-full p-3 shadow-lg"><SlSocialTwitter/></li>
                     </ul>
               </div>
               <div className=" flex items-center gap-44 text-xs font-semibold text-gray-700">
@@ -40,5 +43,6 @@ export default function Footer(){
               <div>
                 <img src="https://snappfood.ir/static/images/senf.png"/>
               </div>
+              </div>
            </div>
-}
+};

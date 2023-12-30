@@ -13,6 +13,7 @@ export default function MapProvider(){
     return <mapContext.Provider value={mapData}>
 
            </mapContext.Provider>
-}
+
+};
 
 

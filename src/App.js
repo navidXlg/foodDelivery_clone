@@ -1,3 +1,4 @@
+import CustmorSubPage from "./Pages/CustmorSubPage";
 import HomePage from "./Pages/HomePage";
 
 
@@ -6,7 +7,9 @@ import HomePage from "./Pages/HomePage";
 export default function App (){
 
 
-return <HomePage/>
+
+
+return <CustmorSubPage/>
 
   // return<Router>
   //         <Routes>

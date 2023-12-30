@@ -1,4 +1,4 @@
-import Navabar from "../componants/Navbar";
+import NavabarHome from "../componants/NavbarHome";
 import Hero from "../componants/Hero";
 import pizza from "../assets/hero-image.png";
 import ProductsCatgory from "../componants/ProductsCatgory";
@@ -9,10 +9,10 @@ import Footer from "../componants/footer";
 
 export default function HomePage(){
 
-    return <main>
-             <section className="mt-16 bg-gray-100 relative mx-24">
-                <Navabar/>
-                <img src={pizza} className=" z-20 relative"/>
+    return <main className="m-auto">
+             <section className="mt-16 rounded-br-[130px]bg-gray-100 relative mx-24 3xl:mx-auto rounded-sm max-w-screen-2xl">
+                <NavabarHome/>
+                <img src={pizza} className="z-20 relative"/>
                 <Hero/>
                 <ProductsCatgory/>
              </section>

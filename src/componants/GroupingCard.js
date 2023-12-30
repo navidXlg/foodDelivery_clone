@@ -1,3 +1,4 @@
+import { IoIosArrowBack } from "react-icons/io";
 
 
 
@@ -54,14 +55,17 @@ export default function GroupingCard(){
         }
     ]
 
-    return <div className="mt-16 mx-24">
+    return <div className="mt-16 mx-24 max-w-screen-2xl 3xl:mx-auto ">
              <div className="text-right mb-9 font-bold">دسته بندی</div>
              <div className="grid grid-cols-6 gap-x-4 gap-y-8">
              {
                 title.map(item =>
-                <div className="h-24 relative overflow-hidden border-4 shadow-md border-white rounded-lg">
+                <div className="hover:shadow-lg cursor-pointer h-24 relative overflow-hidden border-4 shadow-md border-white rounded-lg">
                     <img className="w-full h-full" src={item.src}/>
-                    <p className="absolute text-right py-1 rounded-l-lg pr-2 -right-1 w-20 bottom-0 bg-slate-50 text-gray-800">{item.title}</p>
+                    <div className="absolute flex transition-all ease-in  hover:gap-2 gap-1 items-center justify-center py-1 rounded-l-lg  -right-1 w-20 bottom-0 bg-slate-50 text-gray-800">
+                       <IoIosArrowBack className=" text-purpleSnapp-300 mt-1"/>
+                       <p>{item.title}</p> 
+                    </div>
                 </div>
                 )
              }
