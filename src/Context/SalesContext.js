@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
-export const salesContext = createContext();
 
+export const salesContext = createContext();
 
 export default function SalesProvider({children}){
     const [jobTitle, setJobTitle] = useState(null);
@@ -18,7 +18,7 @@ export default function SalesProvider({children}){
         console.log(creadential);
     };
 
-
+    
     const saleData = {
         jobTitle,
         setJobTitle,
@@ -27,6 +27,7 @@ export default function SalesProvider({children}){
         salesCredential,
         handelSalseFromSubmit
     };
+
 
 
     return <salesContext.Provider value={saleData}>
