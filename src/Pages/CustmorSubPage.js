@@ -1,6 +1,7 @@
 import NavbarSub from "../componants/NavbarSub";
 import SnappFoodBenifit from "../componants/SnappFoodBenifit";
 import SubmitionForm from "../componants/SubmitionForm";
+import SubmitionInfo from "../componants/SubmitionInfo";
 
 
 
@@ -12,7 +13,10 @@ export default function CustmorSubPage(){
               <NavbarSub/>
               <SubmitionForm/>
            </div>
-           <SnappFoodBenifit/>
+           <div className="text-center px-56" dir="rtl">
+           <SnappFoodBenifit/>                                              
+           <SubmitionInfo/> 
+           </div>
            </>
 
 };
