@@ -32,11 +32,6 @@ export default function AuthModel(){
           <IoMdClose className = "cursor-pointer" onClick={() => setModel(false)}/>
           <SnappLogo className="w-14"/>
         </div>
-        <div className='mb-8'>
-          <span className ="text-lg font-bold">ورود</span>
-          یا     
-          <span className="text-lg font-bold"> عضوییت</span>
-        </div>
         <UserLogIn/>
       </div>
     </div>,
