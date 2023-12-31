@@ -3,6 +3,7 @@ import NavbarSub from "../componants/NavbarSub";
 import SnappFoodBenifit from "../componants/SnappFoodBenifit";
 import SubmitionForm from "../componants/SubmitionForm";
 import SubmitionInfo from "../componants/SubmitionInfo";
+import SubmitionStep from "../componants/SubmitionStep";
 
 
 
@@ -18,6 +19,7 @@ export default function CustmorSubPage(){
            <SnappFoodBenifit/>                                              
            <SubmitionInfo/> 
            <InfoTable/>
+           <SubmitionStep/>
            </div>
            </>
 
