@@ -36,7 +36,7 @@ export default function MapModel(){
 
         document.querySelector('.modal-container')
         );
-};
+  };
     
     
 
