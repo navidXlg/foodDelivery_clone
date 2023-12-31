@@ -135,7 +135,7 @@ export default function SubmitionForm(){
                   <input type = "text" {...register("phoneNumber")} className={inputClass} placeholder=" "/>
                   <label className={labelClass}> شماره تلفن همراه</label>
                 </div>
-                <Button snapp rounded className = "text-white  font-bold" off = {isFormComplete} disabled = {!isFormComplete} >دریافت کد تایید</Button>
+                <Button snapp rounded className = "text-white  font-bold" off = {isFormComplete} >دریافت کد تایید</Button>
               </form>
               <div></div>
            </div>

@@ -14,15 +14,15 @@ export default function CustmorSubPage(){
 
     return<> 
            <div dir="rtl" className="px-56 pb-10 bg-purpleSnapp-400">
-              <NavbarSub/>
-              <SubmitionForm/>
+               <NavbarSub/>
+               <SubmitionForm/>
            </div>
            <div className="text-center px-56" dir="rtl">
-           <SnappFoodBenifit/>                                              
-           <SubmitionInfo/> 
-           <InfoTable/>
-           <SubmitionStep/>
-           <CommonQuestions/>
+               <SnappFoodBenifit/>                                              
+               <SubmitionInfo/> 
+               <InfoTable/>
+               <SubmitionStep/>
+               <CommonQuestions/>
            </div>
            <Footer/>
            </>

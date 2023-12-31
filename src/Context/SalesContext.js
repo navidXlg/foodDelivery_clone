@@ -15,6 +15,7 @@ export default function SalesProvider({children}){
     });
 
     const handelSalseFromSubmit = (creadential) =>{
+        console.log(jobTitle , homeTown)
         console.log(creadential);
     };
 
