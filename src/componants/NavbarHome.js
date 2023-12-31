@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useAuthContext from "../Hooks/useAuthContext";
 import SnappLogo from "../assets/SnappLogo";
 import AuthModel from "./AuthModel";
@@ -13,13 +14,15 @@ export default function NavabarHome(){
 
     return <div className="flex items-center justify-between p-8 relative z-30" >
              <div className="flex items-center gap-3 font-semibold text-lg">
-                <Button  rounded className = "flex items-center gap-2">
+               <Link to="/saleSubmit">
+               <Button  rounded className = "flex items-center gap-2">
                  <p>ثبت نام فروشندگان </p>
                   <HiOutlineBuildingStorefront/>
                   </Button>
+               </Link>
                 <Button  rounded snapp className = " py-2 text-white" onClick = {() => setModel("auth")} >ورود یا عضوییت </Button>
              </div>
              <SnappLogo/>
              {model === "auth" && <AuthModel/>}
            </div>
-}
+   }
