@@ -5,12 +5,14 @@ import { useEffect } from 'react';
 import useAuthContext from '../Hooks/useAuthContext';
 import Button from './Button';
 import Map from './Map';
+import useMapContext from '../Hooks/useMapContext';
 
 
 export default function MapModel(){
       
 
      const {setModel} = useAuthContext();
+     const {findLoaction} = useMapContext();
       useEffect(() => {
         document.body.classList.add('overflow-hidden');
     
@@ -18,6 +20,9 @@ export default function MapModel(){
           document.body.classList.remove('overflow-hidden');
         };
       }, []);
+
+
+      
 
       return ReactDOM.createPortal(
         <div>
@@ -28,7 +33,10 @@ export default function MapModel(){
           <div dir="rtl" className="rounded-lg shadow-md fixed inset-x-1/4 top-24 max-h-fit p-10 bg-white z-40">
           <IoMdClose className = "cursor-pointer" onClick={() => setModel(null)}/>
           <p className = "text-2xl font-semibold mt-8">انتخاب آدرس</p>
-          <p className = "my-4  text-sm text-gray-700">برای مشاهده مناسب‌ترین پیشنهادها به شما، ابتدا موقعیتتان را مشخص کنید.</p>
+          <div className="flex items-center justify-between">
+            <p className = "my-4  text-sm text-gray-700">برای مشاهده مناسب‌ترین پیشنهادها به شما، وموقعیت خود را مشخص کنید<br/>روی مارکر کلیک کنید وآن را فعال کنید</p>
+            <button  className = "bg-purpleSnapp-300 text-sm text-white py-2 px-1 font-semibold hover:shadow-lg rounded" onClick = {findLoaction}>یافتن موقعیت</button>
+          </div>
           <Map className = "w-full h-72 "/>
           <Button snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">تایید</Button>
           </div>
