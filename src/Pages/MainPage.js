@@ -1,6 +1,6 @@
+import GroupingCard from "../componants/GroupingCard";
 import MainNavbar from "../componants/MainNavbar";
-import NavabarHome from "../componants/NavbarHome";
-import ProductsCatgory from "../componants/ProductsCatgory";
+import ResturantInfo from "../componants/ResturantInfo";
 
 
 
@@ -8,7 +8,9 @@ import ProductsCatgory from "../componants/ProductsCatgory";
 export default function MainPage(){
 
     return <div dir="rtl">
-            <MainNavbar/>
-          </div>
+              <MainNavbar/>
+              <GroupingCard classname = "mt-72"/>
+              <ResturantInfo/>
+            </div>
 
-}
+  };

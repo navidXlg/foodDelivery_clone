@@ -14,7 +14,7 @@ export default function MainNavbar(){
     const {model, setModel} = useAuthContext();
 
 
-    return <div className="fixed w-full py-8 px-11 border-b-2 border-gray-100 shadow-sm">
+    return <div className="fixed w-full py-8 top-0 right-0 px-11 border-b-2 z-40 bg-white border-gray-100 shadow-sm">
           <div className="grid grid-cols-4 justify-items-start ">
             <div className="flex items-center gap-4">
                 <SnappLogo className="w-16"/>
