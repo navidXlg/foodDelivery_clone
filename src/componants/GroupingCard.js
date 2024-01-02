@@ -56,7 +56,7 @@ export default function GroupingCard({classname}){
         }
     ]
 
-    const style = classNames("mt-16 mx-24 max-w-screen-2xl 3xl:mx-auto", classname)
+    const style = classNames("mt-16  max-w-screen-2xl 3xl:mx-auto", classname)
 
     return <div className={style}>
              <div className="text-right mb-9 font-bold">دسته بندی</div>

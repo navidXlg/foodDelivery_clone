@@ -1,6 +1,11 @@
+import BestProducts from "../componants/BestProducts";
 import GroupingCard from "../componants/GroupingCard";
 import MainNavbar from "../componants/MainNavbar";
-import ResturantInfo from "../componants/ResturantInfo";
+import NewProductsSnapp from "../componants/NewProducts";
+import SalesCenters from "../componants/Salescenters";
+import SpecialTaste from "../componants/SpecialTastes";
+import UserSuggetion from "../componants/UserSuggestion";
+import Footer from "../componants/footer";
 
 
 
@@ -9,8 +14,15 @@ export default function MainPage(){
 
     return <div dir="rtl">
               <MainNavbar/>
-              <GroupingCard classname = "mt-72"/>
-              <ResturantInfo/>
+              <div className="mx-24">
+                <GroupingCard classname = "mt-72"/>
+                <UserSuggetion/>
+                <NewProductsSnapp/>
+                <BestProducts/>
+                <SpecialTaste/>
+              </div>
+              <SalesCenters/>
+              <Footer/>
             </div>
 
   };

@@ -9,7 +9,7 @@ export default function ResturantInfo({src , imgAlt}){
 
     const cla = "https://cdn.snappfood.ir/300x200/cdn/vendor_sub_types/10/01.jpg";
 
-    return <div className="overflow-hidden relative rounded shadow-lg w-80 mb-60">
+    return <div className="overflow-hidden relative rounded shadow-lg min-w-80">
             <img src = {coffe} className="w-full h-1/2"/>
             <img src={brand} className="z-30 absolute top-[10rem] rounded-lg shadow-sm right-[7.6rem] size-20 border-4 border-white"/>
             <div className="flex flex-col gap-3 items-center justify-center mt-14 ">
@@ -26,4 +26,5 @@ export default function ResturantInfo({src , imgAlt}){
                 </div>
             </div>
            </div>
-}
+
+   }
