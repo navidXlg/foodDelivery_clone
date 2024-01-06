@@ -17,11 +17,11 @@ export default function CustmorSubPage(){
     useScrollToTop();
 
     return<> 
-           <div dir="rtl" className="px-56 pb-10 bg-purpleSnapp-400">
+           <div dir="rtl" className="px-3 xl:px-24 2xl:px-56 pb-10 bg-purpleSnapp-400">
                <NavbarSub/>
                <SubmitionForm/>
            </div>
-           <div className="text-center px-56" dir="rtl">
+           <div className="text-center px-10 xl:px-24 2xl:px-56" dir="rtl">
                <SnappFoodBenifit/>                                              
                <SubmitionInfo/> 
                <InfoTable/>

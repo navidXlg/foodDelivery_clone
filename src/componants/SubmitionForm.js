@@ -100,14 +100,14 @@ export default function SubmitionForm(){
 
 
 
-    return <div className="flex items-center mt-14">
+    return <div className="flex items-center mt-14 max-w-screen-2xl flex-col text-center lg:text-right gap-10 lg:flex-row 3xl:mx-auto">
               <div className="self-center flex flex-col gap-8">
                 <p className="text-4xl font-bold">در کمتر از ۱۰ دقیقه ثبت‌نام کنید و<br/> به اسنپ‌فود بپیوندید!</p>
                 <p className="text-xl">دون نیاز به مراجعهٔ حضوری، می‌توانید صفر تا صد قرارداد را در همین صفحه انجام دهید.</p>
-                <img src={aks} className="w-[826px] mt-10"/>
+                <img src={aks} className="w-[826px] mt-10 hidden lg:block"/>
               </div>
               <form 
-              className="self-start flex flex-col gap-8 bg-white px-3 py-5 shadow-lg rounded-md w-[32rem]">
+              className="flex flex-col gap-8 bg-white px-3 py-5 shadow-lg rounded-md min-w-[370px]">
                 <p className="text-2xl font-bold mb-2">فرم ثبت‌نام فروشندگان</p>
                 <p>همین حالا ثبت‌نام کنید!</p>
                 <Dropdown options={job} onChange={setJobTitle} value={jobTitle} title = "انتخاب نوع کسب وکار"/>
