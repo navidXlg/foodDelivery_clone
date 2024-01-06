@@ -1,6 +1,8 @@
 import useMapContext from "../Hooks/useMapContext";
 import {useRef, useMemo, useCallback } from "react";
 import { Marker, Popup} from "react-leaflet";
+import { useMapEvents} from "react-leaflet";
+import { IoLocationSharp } from "react-icons/io5";
 
 
 
@@ -8,7 +10,7 @@ import { Marker, Popup} from "react-leaflet";
 
 export default function DraggableMarker() {
 
-    const {draggable, setDraggable, position, setPosition} = useMapContext();
+    const {draggable, setDraggable, position, setPosition, housingIcon } = useMapContext();
     const markerRef = useRef(null);
     const eventHandlers = useMemo(
       () => ({
@@ -22,6 +24,16 @@ export default function DraggableMarker() {
       [],
     );
 
+    const map = useMapEvents({
+      click() {
+        map.locate()
+      },
+      locationfound(e) {
+        setPosition(e.latlng)
+        map.flyTo(e.latlng, map.getZoom())
+      },
+    });
+
 
     const toggleDraggable = useCallback(() => {
       setDraggable((d) => !d)
@@ -33,7 +45,8 @@ export default function DraggableMarker() {
         draggable={draggable}
         eventHandlers={eventHandlers}
         position={position}
-        ref={markerRef}>
+        ref={markerRef}
+        icon={housingIcon}>  
         <Popup minWidth={90}>
           <span onClick={toggleDraggable}>
             {draggable

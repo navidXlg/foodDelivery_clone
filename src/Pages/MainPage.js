@@ -21,7 +21,9 @@ export default function MainPage(){
                 <BestProducts/>
                 <SpecialTaste/>
               </div>
+              <div dir="ltr">
               <SalesCenters/>
+              </div>
               <Footer/>
             </div>
 

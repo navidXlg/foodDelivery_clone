@@ -10,18 +10,19 @@ import { useScrollToTop } from "../Hooks/useScrollTop";
 
 
 export default function HomePage(){
-
    useScrollToTop(); 
 
-    return <main className="m-auto">
-             <section className="mt-16 rounded-br-[130px] bg-gray-100 relative mx-24 3xl:mx-auto rounded-sm max-w-screen-2xl">
+    return <main className="m-auto max-w-screen-2xl 3xl:mx-auto">
+             <div className="lg:mx-24">
+              <section className="lg:mt-16 rounded-br-[130px] bg-gray-50 relative rounded-md">
                 <NavabarHome/>
-                <img src={pizza} className="z-20 relative"/>
+                <img src={pizza} className="z-20 relative w-screen sm:w-auto"/>
                 <Hero/>
-                <ProductsCatgory classname = " py-5 px-36 absolute top-3/4 z-40"/>
-             </section>
-             <GroupingCard/>
-             <SalesCenters/>
+                <ProductsCatgory classname = "absolute bottom-36 transform translate-x-1/2 translate-y-1/2 right-1/2 z-40"/>
+              </section>
+              <GroupingCard/>
+              <SalesCenters/>
+             </div>
              <Footer/>
            </main>
    };

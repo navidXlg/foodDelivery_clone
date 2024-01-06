@@ -4,6 +4,8 @@ import SnappLogo from "../assets/SnappLogo";
 import AuthModel from "./AuthModel";
 import Button from "./Button";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
+import { IoPersonOutline } from "react-icons/io5";
+
 
 
 
@@ -13,16 +15,24 @@ export default function NavabarHome(){
 
 
     return <div className="flex items-center justify-between p-8 relative z-30" >
-             <div className="flex items-center gap-3 font-semibold text-lg">
+             <div className=" items-center gap-3 font-semibold hidden md:flex">
                <Link to="/saleSubmit">
-               <Button  rounded className = "flex items-center gap-2">
-                 <p>ثبت نام فروشندگان </p>
+                <Button btnHover rounded className = "flex items-center gap-2">
+                  <p>ثبت نام فروشندگان </p>
                   <HiOutlineBuildingStorefront/>
                   </Button>
                </Link>
-                <Button  rounded snapp className = " py-2 text-white" onClick = {() => setModel("auth")} >ورود یا عضوییت </Button>
+                <Button  
+                rounded 
+                snapp
+                btnHover 
+                className = "py-2 text-white" 
+                onClick = {() => setModel("auth")} >ورود یا عضوییت </Button>
              </div>
-             <SnappLogo/>
+             <IoPersonOutline 
+             className="md:hidden size-5"
+             onClick={() => setModel("auth")}/>
+             <SnappLogo className = "sm:size-36 size-20"/>
              {model === "auth" && <AuthModel/>}
            </div>
    }

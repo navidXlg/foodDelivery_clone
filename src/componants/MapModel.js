@@ -12,7 +12,8 @@ export default function MapModel(){
       
 
      const {setModel} = useAuthContext();
-     const {findLoaction} = useMapContext();
+     const {setClientLocation} = useMapContext();
+
       useEffect(() => {
         document.body.classList.add('overflow-hidden');
     
@@ -20,9 +21,6 @@ export default function MapModel(){
           document.body.classList.remove('overflow-hidden');
         };
       }, []);
-
-
-      
 
       return ReactDOM.createPortal(
         <div>
@@ -35,10 +33,9 @@ export default function MapModel(){
           <p className = "text-2xl font-semibold mt-8">انتخاب آدرس</p>
           <div className="flex items-center justify-between">
             <p className = "my-4  text-sm text-gray-700">برای مشاهده مناسب‌ترین پیشنهادها به شما، وموقعیت خود را مشخص کنید<br/>روی مارکر کلیک کنید وآن را فعال کنید</p>
-            <button  className = "bg-purpleSnapp-300 text-sm text-white py-2 px-1 font-semibold hover:shadow-lg rounded" onClick = {findLoaction}>یافتن موقعیت</button>
           </div>
-          <Map className = "w-full h-72 "/>
-          <Button snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">تایید</Button>
+          <Map className = "w-full h-72"/>
+          <Button onClick = {setClientLocation} snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">تایید</Button>
           </div>
         </div>,
 

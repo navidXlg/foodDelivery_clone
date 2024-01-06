@@ -11,6 +11,7 @@ function Button({
   rounded,
   snapp,
   off,
+  btnHover,
   ...rest
 }) {
   const classes = className(
@@ -30,6 +31,7 @@ function Button({
       'text-red-500': outline && danger,
       'bg-purpleSnapp-300' : snapp,
       'bg-gray-200' : !off,
+      'hover:opacity-85' : btnHover
     },
     rest.className
   );
