@@ -1,17 +1,22 @@
 import SnappLogo from "../assets/SnappLogo";
 import Button from "./Button";
+import { Link } from "react-scroll";
 
 
 
 export default function NavbarSub(){
 
+
+
+    
+
     return <div className="pt-6 flex items-center justify-between">
                 <ul className="flex items-center gap-8 font-bold">
-                    <li>آکادمی همکاران</li>
-                    <li>شرایط و مدارک مورد نیاز</li>
-                    <li>مراحل ثبت‌نام</li>
-                    <li>سؤالات متداول</li>
-                    <li>تماس با ما</li>
+                    <li><Link activeClass="active" smooth spy to="snappFoodbenifit">آکادمی همکاران</Link></li>
+                    <li><Link activeClass="active" smooth spy to="submitionInfo">شرایط ومدارک موردنیاز</Link></li>
+                    <li><Link activeClass="active" smooth spy to="submitionSteps"> مراحل ثبت‌نام</Link></li>
+                    <li><Link activeClass="active" smooth spy to="commonQuestions">سؤالات متداول</Link></li>
+                    <li><Link activeClass="active" smooth spy to="snappFoodbenifit">تماس با ما</Link></li>
                 </ul>
 
              <div className="flex items-center gap-10">

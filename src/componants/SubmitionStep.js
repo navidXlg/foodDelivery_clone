@@ -8,7 +8,7 @@ export default function SubmitionStep(){
 
 
 
-    return <div className=" mt-16">
+    return <div className=" mt-16" id="submitionSteps">
              <p className="text-4xl font-bold mb-10">مراحل ثبت‌نام در اسنپ‌فود</p>
              <div className="flex items-center justify-between gap-12">
                 <div className="flex items-center justify-center  flex-col gap-3">

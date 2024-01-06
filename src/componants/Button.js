@@ -11,11 +11,11 @@ function Button({
   rounded,
   snapp,
   off,
+  btnHover,
   ...rest
 }) {
   const classes = className(
-    rest.className,
-  'px-3 py-3 font-bold border',
+    'px-3 py-3 font-bold border',
     {
       'border-blue-500 bg-blue-500 text-white': primary,
       'border-gray-900 bg-gray-900 text-white': secondary,
@@ -30,8 +30,10 @@ function Button({
       'text-yellow-400': outline && warning,
       'text-red-500': outline && danger,
       'bg-purpleSnapp-300' : snapp,
-      'bg-gray-200' : !off
-    }
+      'bg-gray-200' : off,
+      'hover:opacity-85' : btnHover
+    },
+    rest.className
   );
 
   return (

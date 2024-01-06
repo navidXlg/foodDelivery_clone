@@ -1,7 +1,8 @@
+import classNames from "classnames"
 
 
 
-export default function ProductsCatgory(){
+export default function ProductsCatgory({classname}){
 
     const imges = [
        {
@@ -41,16 +42,17 @@ export default function ProductsCatgory(){
         src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_9_603b811b1d540_img_st_other2.png",
         title : "سایر"
        }
-    ]
+    ];
+    const style = classNames("hidden py-5 md:flex items-center justify-around w-3/4 w-max-[76rem] rounded-lg backdrop-blur-md backdrop-contrast-125 shadow-sm rounded-lg ",classname);
 
-    return <div className="flex items-center justify-between  w-full py-5 rounded-lg  px-36 bg-gray-400 absolute top-3/4 z-40">
+    return <div className = {style} dir="rtl">
             {
              imges.map(item => 
              <div className="w-10 flex flex-col items-center">
-                <img src = {item.src}/>
+                <img src = {item.src} className="hover:animate-pulse"/>
                 <p>{item.title}</p>
              </div>
              )   
             }
            </div>
-}
+ };

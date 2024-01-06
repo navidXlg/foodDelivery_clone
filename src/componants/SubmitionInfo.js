@@ -6,7 +6,7 @@
 export default function SubmitionInfo(){
 
 
-    return <div className="my-32">
+    return <div className="my-32" id="submitionInfo">
             <p className="text-4xl font-bold mb-5">شرایط پیوستن به اسنپ‌فود</p>
             <p className="text-lg mb-20">ثبت‌نام در اسنپ‌فود آسان است و نیازی به پرداخت هزینه ندارد.</p>
             <div className="flex items-center justify-between text-start gap-5">

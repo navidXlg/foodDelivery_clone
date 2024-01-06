@@ -5,14 +5,17 @@ import reportWebVitals from './reportWebVitals';
 import "./index.css";
 import AuthProvider from './Context/AuthContext';
 import SalesProvider from './Context/SalesContext';
+import MapProvider from './Context/MapContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <SalesProvider>
-    <AuthProvider>
-      <App /> 
-    </AuthProvider>
+     <MapProvider>
+      <AuthProvider>
+        <App /> 
+      </AuthProvider>
+    </MapProvider> 
     </SalesProvider>
   </React.StrictMode>
 );
