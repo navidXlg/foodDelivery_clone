@@ -14,7 +14,7 @@ import { MdHeadsetMic } from "react-icons/md";
 export default function SnappFoodBenifit(){
 
 
-    return<div className=" my-10">
+    return<div className=" my-10" id="snappFoodbenifit">
             <p className="text-4xl font-bold my-16">مزایای عضویت در اسنپ‌فود</p>
             <div className="grid grid-cols-4 gap-x-8 gap-y-14">
                 <div className="flex flex-col items-center gap-2 justify-center">

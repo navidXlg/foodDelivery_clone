@@ -30,7 +30,7 @@ function Button({
       'text-yellow-400': outline && warning,
       'text-red-500': outline && danger,
       'bg-purpleSnapp-300' : snapp,
-      'bg-gray-200' : !off,
+      'bg-gray-200' : off,
       'hover:opacity-85' : btnHover
     },
     rest.className
