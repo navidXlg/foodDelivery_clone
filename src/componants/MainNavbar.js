@@ -8,12 +8,15 @@ import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 import ProductsCatgory from "./ProductsCatgory";
 import { CiSearch } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
+import { IoMdExit } from "react-icons/io";
 
 
 
 export default function MainNavbar(){
 
     const {model, setModel} = useAuthContext();
+    const {activeAccount, logOut} = useAuthContext();
+    console.log(activeAccount)
 
 
     return <div className="fixed transform right-1/2 translate-x-1/2  w-full max-w-screen-2xl pb-8 pt-6 top-0 px-4 sm:px-11 border-b-2 z-40 bg-white border-gray-100 shadow-sm">
@@ -43,7 +46,19 @@ export default function MainNavbar(){
                  <p>ثبت نام فروشندگان </p>
                   </Button>
                </Link>
-                <Button  rounded snapp className = " py-2 text-sm text-white" onClick = {() => setModel("auth")} >ورود یا عضوییت </Button>
+                    {
+                     activeAccount ?
+                     <Button 
+                     rounded 
+                     snapp 
+                     className ="py-2 text-xl font-bold text-white" 
+                     onClick = {() => logOut()}><IoMdExit/></Button>
+                     :<Button 
+                     rounded 
+                     snapp 
+                     className ="py-2 text-sm text-white" 
+                     onClick = {() => setModel("auth")} >ورود یا عضوییت </Button> 
+                    }   
              </div>
              <div className="flex items-center gap-3">
                 <CiSearch className="md:hidden"/>

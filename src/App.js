@@ -10,6 +10,7 @@ import MainPage from "./Pages/MainPage";
 
 export default function App (){
 
+
   return<BrowserRouter>
           <Routes>
             <Route path = "/" element = {<HomePage/>}/>

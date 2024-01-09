@@ -48,7 +48,7 @@ export default function ProductsCatgory({classname}){
     return <div className = {style} dir="rtl">
             {
              imges.map(item => 
-             <div className="w-10 flex flex-col items-center">
+             <div key={item.title} className="w-10 flex flex-col items-center">
                 <img src = {item.src} className="hover:animate-pulse"/>
                 <p>{item.title}</p>
              </div>
