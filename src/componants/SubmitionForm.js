@@ -91,8 +91,10 @@ export default function SubmitionForm(){
      salesCredential,
      handelSalseFromSubmit} = useSalesContext();
 
-  const formSubmit = (creadential) => handelSalseFromSubmit(creadential);
-
+  const handelSubmit = (event) => {
+    event.preventDefault();
+    handelSalseFromSubmit(salesCredential)
+  }   
 
 
   const inputClass = "peer  w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-transparent focus:border-t-transparent text-sm px-3 py-6 rounded-[7px] border-blue-gray-200 focus:border-gray-900";
@@ -107,7 +109,9 @@ export default function SubmitionForm(){
                 <img src={aks} className="w-[826px] mt-10 hidden lg:block"/>
               </div>
               <form 
-              className="flex flex-col gap-8 bg-white px-3 py-5 shadow-lg rounded-md min-w-[370px]">
+              className="flex flex-col gap-8 bg-white px-3 py-5 shadow-lg rounded-md min-w-[370px]"
+              onSubmit={handelSubmit}
+              >
                 <p className="text-2xl font-bold mb-2">فرم ثبت‌نام فروشندگان</p>
                 <p>همین حالا ثبت‌نام کنید!</p>
                 <Dropdown options={job} onChange={setJobTitle} value={jobTitle} title = "انتخاب نوع کسب وکار"/>

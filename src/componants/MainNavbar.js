@@ -9,13 +9,13 @@ import ProductsCatgory from "./ProductsCatgory";
 import { CiSearch } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMdExit } from "react-icons/io";
-
+import { ClipLoader } from "react-spinners";
 
 
 export default function MainNavbar(){
 
     const {model, setModel} = useAuthContext();
-    const {activeAccount, logOut} = useAuthContext();
+    const {activeAccount, logOut, isLoading} = useAuthContext();
     console.log(activeAccount)
 
 
@@ -52,13 +52,22 @@ export default function MainNavbar(){
                      rounded 
                      snapp 
                      className ="py-2 text-xl font-bold text-white" 
-                     onClick = {() => logOut()}><IoMdExit/></Button>
+                     onClick = {() => logOut()}>
+                     {isLoading ?
+                     <ClipLoader
+                     color="rgba(241, 247, 246, 1)"
+                     size={20}
+                     className="-my-1"
+                   />:<IoMdExit/>  
+                     }
+                     </Button>
                      :<Button 
                      rounded 
                      snapp 
                      className ="py-2 text-sm text-white" 
                      onClick = {() => setModel("auth")} >ورود یا عضوییت </Button> 
                     }   
+                    
              </div>
              <div className="flex items-center gap-3">
                 <CiSearch className="md:hidden"/>

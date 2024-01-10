@@ -8,15 +8,14 @@ export default function NavbarSub(){
 
 
 
-    
 
     return <div className="pt-6 flex items-center justify-between  max-w-screen-2xl 3xl:mx-auto">
                 <ul className="hidden items-center gap-8 font-bold lg:flex">
-                    <li><Link activeClass="active" smooth spy to="snappFoodbenifit">آکادمی همکاران</Link></li>
-                    <li><Link activeClass="active" smooth spy to="submitionInfo">شرایط ومدارک موردنیاز</Link></li>
-                    <li><Link activeClass="active" smooth spy to="submitionSteps"> مراحل ثبت‌نام</Link></li>
-                    <li><Link activeClass="active" smooth spy to="commonQuestions">سؤالات متداول</Link></li>
-                    <li><Link activeClass="active" smooth spy to="snappFoodbenifit">تماس با ما</Link></li>
+                    <li className="hover:text-purpleSnapp-300 transition-all ease-in duration-150 cursor-pointer"><Link activeClass="active" smooth spy to="snappFoodbenifit">آکادمی همکاران</Link></li>
+                    <li className="hover:text-purpleSnapp-300 transition-all ease-in duration-150 cursor-pointer"><Link activeClass="active" smooth spy to="submitionInfo">شرایط ومدارک موردنیاز</Link></li>
+                    <li className="hover:text-purpleSnapp-300 transition-all ease-in duration-150 cursor-pointer"><Link activeClass="active" smooth spy to="submitionSteps"> مراحل ثبت‌نام</Link></li>
+                    <li className="hover:text-purpleSnapp-300 transition-all ease-in duration-150 cursor-pointer"><Link activeClass="active" smooth spy to="commonQuestions">سؤالات متداول</Link></li>
+                    <li className="hover:text-purpleSnapp-300 transition-all ease-in duration-150 cursor-pointer"><Link activeClass="active" smooth spy to="snappFoodbenifit">تماس با ما</Link></li>
                 </ul>
 
              <div className="flex items-center justify-between w-full lg:w-auto gap-10">

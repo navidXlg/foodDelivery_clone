@@ -1,12 +1,16 @@
-import { Client, Account, Teams } from "appwrite";
+import { Client, Account, Teams, Databases } from "appwrite";
 
 export const client = new Client();
 export const account = new Account(client);
 export const teams = new Teams(client);
+export const databases = new Databases(client);
+export const APPLICATION_ID = "659a5d76d50c6526a035";
+export const DATABASE_ID = "659a6a22e9ce96f0193c";
+export const SALESCENTER_COLLECTION = "659e4cec3ece584baab5";
 
 client
     .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint
-    .setProject('659a5d76d50c6526a035') // Your project ID
+    .setProject(APPLICATION_ID) // Your project ID
 ;
 
 

@@ -5,11 +5,16 @@ import SnappLogo from '../assets/SnappLogo';
 import { IoMdClose } from "react-icons/io";
 import UserLogIn from './UserLogIn';
 import UserRegisteration from './UserRegistration';
+import AuthSucces from './AuthSucces';
 
 export default function AuthModel(){
 
 
-  const {setModel, authState} = useAuthContext();
+  const {
+    setModel,
+    authState,
+    succesMessage,
+    setAuthState} = useAuthContext();
 
 
   useEffect(() => {
@@ -18,6 +23,18 @@ export default function AuthModel(){
       document.body.classList.remove('overflow-hidden');
     };
   }, []);
+
+  useEffect(() => {
+    if(succesMessage){
+      setAuthState('succes');
+      setTimeout(()=>{
+        setAuthState("logIn");
+        setModel(false);
+      },3000) 
+  }
+  },[succesMessage])
+
+  console.log(succesMessage)
 
 
 
@@ -33,7 +50,12 @@ export default function AuthModel(){
           <SnappLogo className="w-14"/>
         </div>
         {
-          authState === "logIn" ? <UserLogIn/> : <UserRegisteration/>
+          authState === "logIn" ?
+          <UserLogIn/>
+          :authState === "submit"?
+          <UserRegisteration/>
+          :authState === "succes"?
+          <AuthSucces/>: ""
         }
       </div>
     </div>,

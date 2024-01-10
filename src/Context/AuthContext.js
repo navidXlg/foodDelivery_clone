@@ -11,7 +11,7 @@ export default function AuthProvider({children}){
     const [model, setModel] = useState(null);
     const [authState, setAuthState] = useState("logIn");
     const [isLoading, setIsloading] = useState(false);
-    const [succesMessage, setSuccesMessage] = useState(null);
+    const [succesMessage, setSuccesMessage] = useState(false);
     const [activeAccount, setActiveAccount] = useState(null);
     const [error, setError] = useState(null);
 
@@ -45,7 +45,7 @@ export default function AuthProvider({children}){
 
         try{
            const response = await account.create(ID.unique(), email, password, name);
-           setSuccesMessage(`ثبت نام شما باموفققیت انجام شد.`)
+           setSuccesMessage(true);
            await account.createEmailSession(email, password);
            const acc = await account.get();
            setActiveAccount(acc);
@@ -54,8 +54,10 @@ export default function AuthProvider({children}){
            
         }catch(err){
             setIsloading(false);
+            setSuccesMessage(false);
             setError(err);
         }
+        setSuccesMessage(false);
     };
 
     const logOut = async () => {
@@ -90,6 +92,7 @@ export default function AuthProvider({children}){
         registration,
         setAuthState,
         isLoading,
+        succesMessage,
         logOut,
         error,
         activeAccount
