@@ -10,6 +10,8 @@ export default function SalesProvider({children}){
 
     const [jobTitle, setJobTitle] = useState(null);
     const [homeTown, setHomeTown] = useState(null);
+    const [isLoading, setIsloading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState(null);
     const [isFormComplete, setIsFormComplete] = useState(false);
     const [salesCredential, setSalesCredential] = useState({
         storeName:"",
@@ -18,7 +20,6 @@ export default function SalesProvider({children}){
         phoneNumber:""
     });
 
-    console.log(salesCredential)
     const handelFormChange = (event) => {
         let name = event.target.id;
         let value = event.target.value;
@@ -30,6 +31,7 @@ export default function SalesProvider({children}){
       };
 
     const handelSalseFromSubmit = async(creadential) =>{
+        setIsloading(true);
         if(isFormComplete){
             const data = {
                 name : creadential.name,
@@ -38,22 +40,23 @@ export default function SalesProvider({children}){
                 storeName : creadential.storeName,
                 jobTitle : jobTitle.label,
                 homeTown : homeTown.label
-            }
+            };
             try{
-                const response = await databases.createDocument(DATABASE_ID, SALESCENTER_COLLECTION, ID.unique(), data);
-                console.log(response.data);
-                console.log("done")
+                await databases.createDocument(DATABASE_ID, SALESCENTER_COLLECTION, ID.unique(), data);
+                setIsloading(false);
+    
             }catch(error){
-                console.log(error)
+                setErrorMsg(error);
+                setIsloading(false);
             }
-
-
         };
+
     };
 
-    
     const saleData = {
         jobTitle,
+        isLoading,
+        errorMsg,
         setJobTitle,
         homeTown,
         handelFormChange, 
@@ -64,11 +67,9 @@ export default function SalesProvider({children}){
     };
 
 
-
     return <salesContext.Provider value={saleData}>
                 {children}
            </salesContext.Provider>
-
     };
 
 
