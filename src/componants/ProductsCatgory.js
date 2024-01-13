@@ -43,12 +43,12 @@ export default function ProductsCatgory({classname}){
         title : "سایر"
        }
     ];
-    const style = classNames("hidden py-5 md:flex items-center justify-around w-3/4 w-max-[76rem] rounded-lg backdrop-blur-md backdrop-contrast-125 shadow-sm rounded-lg ",classname);
+    const style = classNames("hidden py-5 md:flex items-center justify-around w-3/4 w-max-[76rem] rounded-lg backdrop-blur-md backdrop-contrast-125  rounded-lg ",classname);
 
     return <div className = {style} dir="rtl">
             {
              imges.map(item => 
-             <div key={item.title} className="w-10 flex flex-col items-center">
+             <div key={item.title} className="w-10 cursor-pointer flex flex-col items-center">
                 <img src = {item.src} className="hover:animate-pulse"/>
                 <p>{item.title}</p>
              </div>

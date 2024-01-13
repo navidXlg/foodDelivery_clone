@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form";
 import Button from "./Button";
 import useAuthContext from "../Hooks/useAuthContext";
+import { FaRegFaceFrown } from "react-icons/fa6";
 import { BeatLoader } from "react-spinners";
 
 
 export default function UserRegisteration (){
 
     const { register, handleSubmit} = useForm();
-    const {registration, isLoading, setAuthState} = useAuthContext();
+    const {registration, isLoading, setAuthState, error} = useAuthContext();
     const formSubmit = (creadintial) => {
         registration(creadintial);
     };
@@ -26,6 +27,12 @@ export default function UserRegisteration (){
               <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2' {...register('password')} type="password"/>
               <label className='text-sm font-semibold text-gray-500' >تکرار رمز عبور</label>
               <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2 mb-4'{...register('passwordRepeat')} type='password'/>
+              {
+                error && <div className="text-red-900 flex items-center justify-center gap-3 font-bold">
+                <FaRegFaceFrown/>
+                {error}
+              </div>
+              }
               <Button 
                 snapp 
                 rounded 

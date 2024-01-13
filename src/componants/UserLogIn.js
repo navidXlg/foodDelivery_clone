@@ -2,16 +2,18 @@ import { useForm } from "react-hook-form";
 import Button from "./Button";
 import useAuthContext from "../Hooks/useAuthContext";
 import { BeatLoader } from "react-spinners";
+import { FaRegFaceFrown } from "react-icons/fa6";
 
 
 export default function UserLogIn (){
 
 
     const { register, handleSubmit } = useForm();
-    const {logIn, setAuthState, isLoading} = useAuthContext();
+    const {logIn, setAuthState, isLoading, error} = useAuthContext();
     const formLogIn = (creadintial) => {
       logIn(creadintial)
     };
+
             
     return <>      
             <div className='mb-8'>
@@ -22,6 +24,12 @@ export default function UserLogIn (){
               <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2' {...register('email')} type="email"/>
               <label className='text-sm font-semibold text-gray-500' >رمز عبور</label>
               <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2 mb-4'{...register('password')} type='password'/>
+              {
+                error && <div className="text-red-900 font-bold flex gap-2 items-center justify-center mb-3">
+                <FaRegFaceFrown/>
+                مشکلی رخ داده است
+              </div>
+              }
               <Button 
                   snapp 
                   rounded 

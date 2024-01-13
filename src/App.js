@@ -3,6 +3,7 @@ import HomePage from "./Pages/HomePage";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom"
 import MainPage from "./Pages/MainPage";
+import ProductCenterPage from "./Pages/ProductCenterPage";
 
 
 

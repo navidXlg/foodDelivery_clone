@@ -34,10 +34,7 @@ export default function AuthModel(){
   }
   },[succesMessage])
 
-  console.log(succesMessage)
-
-
-
+  
   return ReactDOM.createPortal(
     <div className="z-40 relative">
       <div

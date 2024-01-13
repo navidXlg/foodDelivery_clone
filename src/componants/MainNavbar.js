@@ -10,21 +10,23 @@ import { CiSearch } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMdExit } from "react-icons/io";
 import { ClipLoader } from "react-spinners";
+import MapModel from "./MapModel";
 
 
 export default function MainNavbar(){
 
     const {model, setModel} = useAuthContext();
     const {activeAccount, logOut, isLoading} = useAuthContext();
-    console.log(activeAccount)
 
 
     return <div className="fixed transform right-1/2 translate-x-1/2  w-full max-w-screen-2xl pb-8 pt-6 top-0 px-4 sm:px-11 border-b-2 z-40 bg-white border-gray-100 shadow-sm">
           <div className="flex justify-between md:grid grid-cols-4 justify-items-start  items-center">
             <div className="flex items-center gap-4">
                 <SnappLogo className="w-16 hidden sm:block"/>
-                <div className="flex items-center gap-2">
-                    <TbCurrentLocation className="text-gray-500"/>
+                <div 
+                className="flex items-center gap-2 cursor-pointer" 
+                onClick={() => setModel("map")}>
+                    <TbCurrentLocation className="text-gray-400 size-5"/>
                     <p className="font-semibold">برای تغییر آدرس خود کلیک کنید</p>
                 </div>
             </div>
@@ -74,7 +76,13 @@ export default function MainNavbar(){
                 <IoPersonOutline 
                     className="md:hidden size-5 justify-self-end"
                     onClick={() => setModel("auth")}/>
-                    {model === "auth" && <AuthModel/>}
+                    {
+                    model === "auth" ?
+                    <AuthModel/>:
+                    model === "map" ?
+                    <MapModel/>:
+                    ""
+                    }
              </div>
              </div>
             <ProductsCatgory classname="mt-8 mx-auto w-full shadow-none"/>

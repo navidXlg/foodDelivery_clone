@@ -13,11 +13,18 @@ export default function AuthProvider({children}){
     const [isLoading, setIsloading] = useState(false);
     const [succesMessage, setSuccesMessage] = useState(false);
     const [activeAccount, setActiveAccount] = useState(null);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         onLoad();
-    },[])
+    },[]);
+    useEffect(() => {
+        if (error){
+            setTimeout(() => {
+                setError(false)
+            },3000)
+        };
+    });
 
 
     const logIn = async (credential) => {
@@ -30,32 +37,34 @@ export default function AuthProvider({children}){
          await account.createEmailSession(email, password);
          const acc = await account.get();
          setActiveAccount(acc);
-         setIsloading(false)
 
         }catch (error) {
-          setIsloading(false)
-          setError(error)
+          setError(error.message)
+        }finally{
+         setIsloading(false)
         }        
     };
     
     const registration = async (credential) => {
         setIsloading(true);
         const {name, email, password, passwordRepeat} = credential;
-        if(password !== passwordRepeat) return;
+        if(password !== passwordRepeat){
+            setIsloading(false);
+            setError("رمز عبور مطابقت ندارند");
+            return;
+        };
 
         try{
-           const response = await account.create(ID.unique(), email, password, name);
+           await account.create(ID.unique(), email, password, name);
            setSuccesMessage(true);
            await account.createEmailSession(email, password);
            const acc = await account.get();
-           setActiveAccount(acc);
-           setIsloading(false);
-           console.log(response, acc);
-           
+           setActiveAccount(acc);           
         }catch(err){
-            setIsloading(false);
             setSuccesMessage(false);
-            setError(err);
+            setError(err.message);
+        }finally{
+           setIsloading(false);
         }
         setSuccesMessage(false);
     };
@@ -66,7 +75,7 @@ export default function AuthProvider({children}){
             await account.deleteSession('current');
             setActiveAccount(null);
             setIsloading(false)
-            setSuccesMessage("نشست شما باموفقییت پایان یافت .")
+            setSuccesMessage("نشست شما باموفقییت پایان یافت.")
         }catch(err){
             setError(err.message);
             setIsloading(false);
@@ -78,7 +87,7 @@ export default function AuthProvider({children}){
             const acc = await account.get();
             setActiveAccount(acc);
         }catch(error){
-            setError(error)
+            // setError(error)
         }
     }
 
@@ -95,7 +104,7 @@ export default function AuthProvider({children}){
         succesMessage,
         logOut,
         error,
-        activeAccount
+        activeAccount,
     };
     
     return <AuthContext.Provider value={AuthData}>

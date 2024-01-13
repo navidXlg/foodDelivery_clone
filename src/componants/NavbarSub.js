@@ -19,7 +19,7 @@ export default function NavbarSub(){
                 </ul>
 
              <div className="flex items-center justify-between w-full lg:w-auto gap-10">
-                <Button snapp rounded  className ="text-lg text-white py-2 font-bold">دانلود اپلیکیشن دخل</Button>
+                <Button snapp rounded btnHover   className ="text-lg text-white py-2 font-bold">دانلود اپلیکیشن دخل</Button>
                 <SnappLogo className = "w-20"/>
              </div>
            </div>

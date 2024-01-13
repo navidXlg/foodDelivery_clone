@@ -6,9 +6,8 @@ import GroupingCard from "../componants/GroupingCard";
 import SalesCenters from "../componants/Salescenters";
 import Footer from "../componants/footer";
 import { useScrollToTop } from "../Hooks/useScrollTop";
-import { useEffect } from "react";
 import useAuthContext from "../Hooks/useAuthContext";
-import { useNavigate } from "react-router";
+import useRedirectIfActiveAccount from "../Hooks/useRedirectActiveAccount";
 
 
 
@@ -17,10 +16,8 @@ export default function HomePage(){
 
    useScrollToTop(); 
    const {activeAccount} = useAuthContext();
-   const navigate = useNavigate();
-   useEffect(() => {
-    if(activeAccount) navigate("/mainPage")
-   });
+   useRedirectIfActiveAccount(activeAccount, "/mainPage");
+
 
     return <main className="m-auto max-w-screen-2xl 3xl:mx-auto">
              <div className="lg:mx-24">

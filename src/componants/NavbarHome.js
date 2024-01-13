@@ -17,7 +17,10 @@ export default function NavabarHome(){
     return <div className="flex items-center justify-between p-8 relative z-30" >
              <div className=" items-center gap-3 font-semibold hidden md:flex">
                <Link to="/saleSubmit">
-                <Button btnHover rounded className = "flex items-center gap-2">
+                <Button 
+                btnHover 
+                rounded 
+                className = "flex items-center gap-2">
                   <p>ثبت نام فروشندگان </p>
                   <HiOutlineBuildingStorefront/>
                   </Button>
