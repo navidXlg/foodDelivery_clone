@@ -11,6 +11,7 @@ import { IoPersonOutline } from "react-icons/io5";
 import { IoMdExit } from "react-icons/io";
 import { ClipLoader } from "react-spinners";
 import MapModel from "./MapModel";
+import SearchBar from "./SearchBar";
 
 
 export default function MainNavbar(){
@@ -30,17 +31,7 @@ export default function MainNavbar(){
                     <p className="font-semibold">برای تغییر آدرس خود کلیک کنید</p>
                 </div>
             </div>
-            <form className="col-span-2 hidden md:block w-4/5">   
-            <label for="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-            <div className="relative">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                    </svg>
-                </div>
-                <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="جست و جو در اسنپ فود ... " required/>
-            </div>
-            </form>
+             <SearchBar/>   
              <div className="items-center hidden md:flex gap-3 font-semibold text-lg justify-self-end">
                <Link to="/saleSubmit">
                <Button  rounded btnHover className = "flex text-sm items-center gap-2">
@@ -50,10 +41,7 @@ export default function MainNavbar(){
                </Link>
                     {
                      activeAccount ?
-                     <Button
-                     btnHover 
-                     rounded 
-                     snapp 
+                     <Button btnHover rounded snapp 
                      className ="py-2 text-xl font-bold text-white" 
                      onClick = {() => logOut()}>
                      {isLoading ?
@@ -64,12 +52,9 @@ export default function MainNavbar(){
                    />:<IoMdExit/>  
                      }
                      </Button>
-                     :<Button 
-                     rounded 
-                     snapp 
-                     btnHover
+                     :<Button rounded snapp btnHover
                      className ="py-2 text-sm text-white" 
-                     onClick = {() => setModel("auth")} >ورود یا عضوییت </Button> 
+                     onClick = {() => setModel("auth")} >ورود یا عضوییت</Button> 
                     }   
                     
              </div>
@@ -87,7 +72,7 @@ export default function MainNavbar(){
                     }
              </div>
              </div>
-            <ProductsCatgory classname="mt-8 mx-auto w-full shadow-none"/>
+            <ProductsCatgory className="mt-8 mx-auto w-full shadow-none"/>
         </div>  
 
     };

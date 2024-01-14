@@ -81,7 +81,7 @@ export const productTitle = [
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_sokhari_1.jpg",
-        title : "بینالمل"
+        title : "بین الملل"
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_gilani_1.jpg",
