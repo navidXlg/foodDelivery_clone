@@ -43,14 +43,15 @@ export default function MainNavbar(){
             </form>
              <div className="items-center hidden md:flex gap-3 font-semibold text-lg justify-self-end">
                <Link to="/saleSubmit">
-               <Button  rounded className = "flex text-sm items-center gap-2">
+               <Button  rounded btnHover className = "flex text-sm items-center gap-2">
                   <HiOutlineBuildingStorefront/>
                  <p>ثبت نام فروشندگان </p>
                   </Button>
                </Link>
                     {
                      activeAccount ?
-                     <Button 
+                     <Button
+                     btnHover 
                      rounded 
                      snapp 
                      className ="py-2 text-xl font-bold text-white" 
@@ -66,6 +67,7 @@ export default function MainNavbar(){
                      :<Button 
                      rounded 
                      snapp 
+                     btnHover
                      className ="py-2 text-sm text-white" 
                      onClick = {() => setModel("auth")} >ورود یا عضوییت </Button> 
                     }   

@@ -3,6 +3,7 @@ import Button from "./Button";
 import useAuthContext from "../Hooks/useAuthContext";
 import { FaRegFaceFrown } from "react-icons/fa6";
 import { BeatLoader } from "react-spinners";
+import CustomInput from "./CustomInput";
 
 
 export default function UserRegisteration (){
@@ -19,14 +20,10 @@ export default function UserRegisteration (){
              <span className ="text-lg font-bold cursor-pointer border-b-2 border-purpleSnapp-300" onClick={() => setAuthState("logIn")} >ورود</span>
             </div>
             <form className='flex gap-2 flex-col' onSubmit={handleSubmit(formSubmit)}>
-              <label className='text-sm font-semibold text-gray-500'>نام کاربری</label>
-              <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2' {...register('name')} type="text"/>
-              <label className='text-sm font-semibold text-gray-500'>ایمیل</label>
-              <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2' {...register('email')} type="email"/>
-              <label className='text-sm font-semibold text-gray-500'>رمز عبور</label>
-              <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2' {...register('password')} type="password"/>
-              <label className='text-sm font-semibold text-gray-500' >تکرار رمز عبور</label>
-              <input className='shadow-sm rounded-lg border-gray-400 px-2 border-2 py-2 mb-4'{...register('passwordRepeat')} type='password'/>
+              <CustomInput label = "نام کاربری" register={{...register('name')}} type="text"/>
+              <CustomInput label = "ایمیل" register={{...register('email')}} type="email"/>
+              <CustomInput label = "رمز عبور" register={{...register('password')}} type="password"/>
+              <CustomInput label = "تکرار رمز عبور" register={{...register('passwordRepeat')}} type="password"/>
               {
                 error && <div className="text-red-900 flex items-center justify-center gap-3 font-bold">
                 <FaRegFaceFrown/>

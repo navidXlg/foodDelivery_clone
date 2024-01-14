@@ -25,7 +25,7 @@ export default function HomePage(){
                 <NavabarHome/>
                 <img src={pizza} className="z-20 relative w-screen sm:w-auto"/>
                 <Hero/>
-                <ProductsCatgory classname = "absolute bottom-36 transform translate-x-1/2 translate-y-1/2 right-1/2 z-40"/>
+                <ProductsCatgory className = "absolute bottom-36 transform translate-x-1/2 translate-y-1/2 right-1/2 z-40"/>
               </section>
               <GroupingCard/>
               <SalesCenters/>

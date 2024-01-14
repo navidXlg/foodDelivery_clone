@@ -17,23 +17,22 @@ export default function NavabarHome(){
     return <div className="flex items-center justify-between p-8 relative z-30" >
              <div className=" items-center gap-3 font-semibold hidden md:flex">
                <Link to="/saleSubmit">
-                <Button 
-                btnHover 
-                rounded 
-                className = "flex items-center gap-2">
+                <Button btnHover rounded className = "flex items-center gap-2">
                   <p>ثبت نام فروشندگان </p>
                   <HiOutlineBuildingStorefront/>
-                  </Button>
+                </Button>
                </Link>
-                <Button  
+               <Button  
                 rounded 
                 snapp
                 btnHover 
                 className = "py-2 text-white" 
-                onClick = {() => setModel("auth")} >ورود یا عضوییت </Button>
+                onClick = {() => setModel("auth")} >ورود یا عضوییت 
+               </Button>
              </div>
+             
              <IoPersonOutline 
-             className="md:hidden size-5"
+             className="md:hidden size-5 hover:text-purpleSnapp-300 transition-all ease-in duration-200"
              onClick={() => setModel("auth")}/>
              <SnappLogo className = "sm:size-36 size-20"/>
              {model === "auth" && <AuthModel/>}

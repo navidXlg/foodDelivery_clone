@@ -32,7 +32,7 @@ export default function Accordion({ items }) {
           {icon}
           {item.label}
         </div>
-        {isExpanded && <div className="border-b p-5">{item.content}</div>}
+        {isExpanded && <div className="border-b p-5 text-right">{item.content}</div>}
       </div>
     );
   });

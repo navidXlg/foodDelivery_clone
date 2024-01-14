@@ -6,13 +6,14 @@ import useAuthContext from '../Hooks/useAuthContext';
 import Button from './Button';
 import Map from './Map';
 import useMapContext from '../Hooks/useMapContext';
+import { BeatLoader } from 'react-spinners';
 
 
 export default function MapModel(){
       
 
      const {setModel} = useAuthContext();
-     const {setClientLocation} = useMapContext();
+     const {setClientLocation, isLoading} = useMapContext();
 
       useEffect(() => {
         document.body.classList.add('overflow-hidden');
@@ -35,7 +36,12 @@ export default function MapModel(){
             <p className = "my-4  text-sm text-gray-700">برای مشاهده مناسب‌ترین پیشنهادها به شما، وموقعیت خود را مشخص کنید<br/>روی مارکر کلیک کنید وآن را فعال کنید</p>
           </div>
           <Map className = "w-full h-72"/>
-          <Button onClick = {setClientLocation} snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">تایید</Button>
+          <Button onClick = {setClientLocation} snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">
+            {
+               isLoading ? <BeatLoader  color="rgba(232, 232, 232, 1)" margin={1} size={12} speedMultiplier={1} />
+               :"تایید"
+            }
+            </Button>
           </div>
         </div>,
 

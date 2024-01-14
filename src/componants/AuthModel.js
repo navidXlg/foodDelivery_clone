@@ -16,7 +16,7 @@ export default function AuthModel(){
     succesMessage,
     setAuthState} = useAuthContext();
 
-
+  // Handeling model close when comonent dose not render
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
     return () => {
@@ -24,13 +24,15 @@ export default function AuthModel(){
     };
   }, []);
 
+  // Adding Logic of when to show succes Message and time duration
+  // To show succes Componant
   useEffect(() => {
     if(succesMessage){
-      setAuthState('succes');
+      setAuthState("succes");
       setTimeout(()=>{
         setAuthState("logIn");
         setModel(false);
-      },3000) 
+      },2000) 
   }
   },[succesMessage])
 
@@ -39,11 +41,12 @@ export default function AuthModel(){
     <div className="z-40 relative">
       <div
         onClick={() => setModel(null)}
-        className="fixed inset-0 bg-gray-300 opacity-50"
-      ></div>
+        className="fixed inset-0 bg-gray-300 opacity-50">
+      </div>
       <div dir='rtl' className="fixed inset-x-1/3 top-24 max-h-fit px-8 py-4 rounded-lg shadow-md bg-gray-50 flex flex-col">
         <div className='flex justify-between items-center'>
-          <IoMdClose className = "cursor-pointer" onClick={() => setModel(false)}/>
+          <IoMdClose className = "cursor-pointer" 
+          onClick={() => setModel(false)}/>
           <SnappLogo className="w-14"/>
         </div>
         {

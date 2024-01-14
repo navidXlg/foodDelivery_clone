@@ -7,6 +7,7 @@ export const databases = new Databases(client);
 export const APPLICATION_ID = "659a5d76d50c6526a035";
 export const DATABASE_ID = "659a6a22e9ce96f0193c";
 export const SALESCENTER_COLLECTION = "659e4cec3ece584baab5";
+export const LOACTION_COLLECTION = "65a23c3cbc9275e3beb3";
 
 client
     .setEndpoint('https://cloud.appwrite.io/v1') // Your API Endpoint

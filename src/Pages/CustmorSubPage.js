@@ -15,7 +15,6 @@ import { useScrollToTop } from "../Hooks/useScrollTop";
 export default function CustmorSubPage(){
 
     useScrollToTop();
-
     return<> 
            <div dir="rtl" className="px-3 xl:px-24 2xl:px-56 pb-10 bg-purpleSnapp-400">
                <NavbarSub/>
@@ -30,5 +29,4 @@ export default function CustmorSubPage(){
            </div>
            <Footer/>
            </>
-
 };

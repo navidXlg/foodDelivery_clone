@@ -50,7 +50,6 @@ export default function SalesProvider({children}){
                 setIsloading(false);
             }
         };
-
     };
 
     const saleData = {
