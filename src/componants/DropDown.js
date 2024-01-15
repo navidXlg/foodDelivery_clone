@@ -50,8 +50,7 @@ function Dropdown({ options, value, onChange, title, className }) {
     <div ref={divEl} className ={`w-full text-gray-600 border-2 py-4 relative ${className}`}>
       <div
         className="flex justify-between mx-2 items-center cursor-pointer"
-        onClick={handleClick}
-      >
+        onClick={handleClick}>
         {value?.label || title }
         {isOpen ? <GoChevronRight/> : <GoChevronDown/>}
       </div>

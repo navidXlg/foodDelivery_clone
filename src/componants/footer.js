@@ -7,7 +7,7 @@ import { SlSocialTwitter } from "react-icons/sl";
 
 export default function Footer(){
 
-
+  
     return <div className="bg-gray-100 px-12 py-24 mt-5" dir="rtl">
             <div className="flex flex-col items-center md:items-start md:flex-row gap-16 text-center md:gap-0 justify-between max-w-7xl 2xl:mx-auto">
               <div>
