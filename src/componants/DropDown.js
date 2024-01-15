@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { GoChevronDown } from 'react-icons/go';
 import { GoChevronRight } from 'react-icons/go';
 
-function Dropdown({ options, value, onChange, title }) {
+function Dropdown({ options, value, onChange, title, className }) {
   const [isOpen, setIsOpen] = useState(false);
   const divEl = useRef();
 
@@ -47,7 +47,7 @@ function Dropdown({ options, value, onChange, title }) {
 
 
   return (
-    <div ref={divEl} className="w-full text-gray-600 border-2 py-4 relative">
+    <div ref={divEl} className ={`w-full text-gray-600 border-2 py-4 relative ${className}`}>
       <div
         className="flex justify-between mx-2 items-center cursor-pointer"
         onClick={handleClick}

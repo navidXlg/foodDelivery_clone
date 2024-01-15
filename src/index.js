@@ -6,6 +6,7 @@ import "./index.css";
 import AuthProvider from './Context/AuthContext';
 import SalesProvider from './Context/SalesContext';
 import MapProvider from './Context/MapContext';
+import OrderProvider from './Context/OrderContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <SalesProvider>
       <AuthProvider>
        <MapProvider>
+        <OrderProvider>
         <App /> 
+        </OrderProvider>
        </MapProvider> 
       </AuthProvider>
     </SalesProvider>
