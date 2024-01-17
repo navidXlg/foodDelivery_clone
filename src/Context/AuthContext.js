@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import { account } from "../appWriteConfig";
+import { ORIGINALUSER_ID, account, teams } from "../appWriteConfig";
+import { Permission, Role } from "appwrite";
 import { ID } from "appwrite";
 
 
@@ -59,6 +60,8 @@ export default function AuthProvider({children}){
            setSuccesMessage(true);
            await account.createEmailSession(email, password);
            const acc = await account.get();
+           await teams.createMembership("659a642329b145e1ca44", [Permission.read(Role.any())], 
+           email, acc.$id);
            setActiveAccount(acc);           
         }catch(err){
             setSuccesMessage(false);

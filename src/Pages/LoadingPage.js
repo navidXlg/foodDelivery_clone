@@ -1,7 +1,6 @@
 import { PuffLoader } from "react-spinners"
 
 
-
 export default function LoadignPage(){
 
     return<div className="h-screen m-auto flex flex-col items-center justify-center gap-16">

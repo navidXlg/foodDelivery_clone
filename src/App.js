@@ -1,7 +1,7 @@
-import { Suspense, lazy } from "react";
+import { lazy } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import LoadignPage from "./Pages/LoadingPage";
+import SuspenseLoading from "./Hooks/SuspenceLoading";
 const HomePage = lazy(() => import("./Pages/HomePage"));
 const CustmorSubPage = lazy(() => import("./Pages/CustmorSubPage"));
 const MainPage = lazy(() => import("./Pages/MainPage"));
@@ -13,15 +13,10 @@ export default function App (){
 
   return <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LoadignPage/>}/>
-            <Route path="/a" element = {
-              <Suspense fallback = {<h1>The Page is Loading</h1>}>
-                <ProductCenterPage/>
-              </Suspense>
-            }/>
-            <Route path = "/HomePage" element = {<HomePage/>}/>
-            <Route path ="/saleSubmit" element = {<CustmorSubPage/>}/>
-            <Route path = "/mainPage"  element = {<MainPage/>}/>
+            <Route path="/" element = {<SuspenseLoading page={<ProductCenterPage/>}/>}/>
+            <Route path = "/HomePage" element = {<SuspenseLoading page={<HomePage/>}/>}/>
+            <Route path ="/saleSubmit" element = {<SuspenseLoading page={<CustmorSubPage/>}/>}/>
+            <Route path = "/mainPage"  element = {<SuspenseLoading page={<MainPage/>}/>}/>
           </Routes>
         </BrowserRouter>
 };
