@@ -26,6 +26,15 @@ export default function AuthProvider({children}){
             },3000)
         };
     });
+    useEffect(() => {
+        if(succesMessage){
+          setAuthState("succes");
+          setTimeout(()=>{
+            setModel(false);
+            setAuthState("logIn");
+          },2000) 
+      }
+      },[]);
 
 
     const logIn = async (credential) => {

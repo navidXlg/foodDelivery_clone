@@ -15,7 +15,7 @@ export default function HomePage(){
 
 
    useScrollToTop(); 
-   const {activeAccount} = useAuthContext();
+   const {activeAccount, setModel} = useAuthContext();
    useRedirectIfActiveAccount(activeAccount, "/mainPage");
 
 
@@ -25,9 +25,11 @@ export default function HomePage(){
                 <NavabarHome/>
                 <img src={pizza} className="z-20 relative w-screen sm:w-auto"/>
                 <Hero/>
-                <ProductsCatgory className = "absolute bottom-36 transform translate-x-1/2 translate-y-1/2 right-1/2 z-40"/>
+                <ProductsCatgory
+                onClick = {() => setModel("auth")} 
+                className = "absolute bottom-36 transform py-3 px-5 translate-x-1/2 translate-y-1/2 right-1/2 z-40"/>
               </section>
-              <GroupingCard/>
+              <GroupingCard onClick = {() => setModel("auth")}/>
               <SalesCenters/>
              </div>
              <Footer/>

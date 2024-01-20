@@ -26,15 +26,7 @@ export default function AuthModel(){
 
   // Adding Logic of when to show succes Message and time duration
   // To show succes Componant
-  useEffect(() => {
-    if(succesMessage){
-      setAuthState("succes");
-      setTimeout(()=>{
-        setAuthState("logIn");
-        setModel(false);
-      },2000) 
-  }
-  },[succesMessage])
+
 
   
   return ReactDOM.createPortal(

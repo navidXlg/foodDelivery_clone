@@ -27,15 +27,12 @@ export default function OrderProperties(){
 
     const handelToggle = (label) => {
         if(orderProp.includes(label)){
-            const respons = orderProp.filter(item => item !== label);
-            setOrderProp(respons);
-            return;
+            setOrderProp(orderProp.filter(item => item !== label));
+        }else{
+            setOrderProp([...orderProp, label])
         }
-        setOrderProp([...orderProp, label])
     };
-    console.log(orderProp)
-
-
+    
     return <div className="shadow-lg px-4 py-8 w-[280px] text-sm rounded-md ">
              {
                 orderPropertiesconfig.map(item => 
