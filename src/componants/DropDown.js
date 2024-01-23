@@ -36,7 +36,7 @@ function Dropdown({ options, value, onChange, title, className }) {
   const renderedOptions = options.map((option) => {
     return (
       <div
-        className="bg-white px-2 py-4 border-b-2 cursor-pointer hover:bg-gray-100 border-gray-300"
+        className="bg-white px-2  py-4 border-b-2 cursor-pointer hover:bg-gray-100 border-gray-300"
         onClick={() => handleOptionClick(option)}
         key={option.value}
       >
@@ -47,14 +47,14 @@ function Dropdown({ options, value, onChange, title, className }) {
 
 
   return (
-    <div ref={divEl} className ={`w-full text-gray-600 border-2 py-4 relative ${className}`}>
+    <div ref={divEl} className ={`text-gray-600 border-2 py-4 relative ${className}`}>
       <div
-        className="flex justify-between mx-2 items-center cursor-pointer"
+        className="flex justify-between mx-2 gap-4 items-center cursor-pointer"
         onClick={handleClick}>
         {value?.label || title }
         {isOpen ? <GoChevronRight/> : <GoChevronDown/>}
       </div>
-      {isOpen && <div className="absolute  z-30 w-full rounded-lg shadow-2xl border-2 max-h-56 overflow-y-scroll  top-full">{renderedOptions}</div>}
+      {isOpen && <div className="absolute z-30 w-full rounded-lg shadow-2xl border-2 max-h-56 overflow-y-scroll  top-full">{renderedOptions}</div>}
     </div>
   );
 }

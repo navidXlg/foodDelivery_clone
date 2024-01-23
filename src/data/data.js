@@ -1,40 +1,55 @@
 export const catgoryItems = [
     {
     src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_1_603508bf202d8_img_st_food.png",
-    title : "رستوران"
+    title : "رستوران",
+    titleId : "resturants"
     },
     {
      src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_4_603508a14ab73_img_st_supermarket.png",
-     title : "سوپرمارکت"
+     title : "سوپرمارکت",
+     titleId : "resturacts"
+
+     
      },
      {
     src :   "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_2_603508b330711_img_st_cafe.png",
-    title : "کافه"
+    title : "کافه",
+    titleId : "resturants"
+
     }, 
     {
      src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_3_603508a95b9be_img_st_sweet.png",
-     title : "شیرینی"
+     title : "شیرینی",
+    titleId : "resturants"
+
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_7_60350883d6e43_img_st_nut.png",
-     title : "آجیل"
+     title : "آجیل",
+    titleId : "resturants"
+
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_8_6035087b463a3_img_st_icecream.png",
-     title : "بستنی"
+     title : "بستنی",
+    titleId : "resturants"
+
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_11_603507afc9a32_img_st_meat.png",
-
-     title : "گوشت"
+     title : "گوشت",
+      titleId : "resturants"
     },
     {
      src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_6_6035088cbcde4_img_st_fruit.png",
-     title : "میوه"
+     title : "میوه",
+     titleId : "resturants"
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_9_603b811b1d540_img_st_other2.png",
-     title : "سایر"
+     title : "سایر",
+     titleId : "resturants"
+
     }
  ];
 

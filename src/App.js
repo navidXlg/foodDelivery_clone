@@ -14,10 +14,10 @@ export default function App (){
 
   return <BrowserRouter>
           <Routes>
-            <Route path="/ProductPage" element = {<SuspenseLoading page={<ProductCenterPage/>}/>}/>
             <Route path = "/" element = {<SuspenseLoading page={<HomePage/>}/>}/>
             <Route path ="/saleSubmit" element = {<SuspenseLoading page={<CustmorSubPage/>}/>}/>
             <Route path = "/mainPage"  element = {<SuspenseLoading page={<MainPage/>}/>}/>
+            <Route path = "/ProductPage/:productID"  element = {<SuspenseLoading page={<ProductCenterPage/>}/>}/>
             <Route path="*" element = {<ErrorPage/>}/>
           </Routes>
         </BrowserRouter>

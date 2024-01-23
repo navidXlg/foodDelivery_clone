@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { DATABASE_ID, SALESCENTER_COLLECTION, databases } from "../appWriteConfig";
 import { ID } from "appwrite";
+import SalesCenters from "../componants/Salescenters";
 
 
 export const salesContext = createContext();
@@ -19,6 +20,7 @@ export default function SalesProvider({children}){
         lastName:"",
         phoneNumber:""
     });
+    const [saleCenters, setSaleCenter] = useState([]);
 
     const handelFormChange = (event) => {
         let name = event.target.id;
@@ -52,9 +54,26 @@ export default function SalesProvider({children}){
         };
     };
 
+    const getSaleCenter = async (product) => {
+        setIsloading(true);
+        try {
+            const res = await fetch(`http://localhost:3001/${product}`);
+            const resJson = await res.json();
+            setSaleCenter(resJson);
+        }catch(err){
+            setErrorMsg(err);
+
+        }finally{
+            setIsloading(false);
+        }
+    };
+
+
+
     const saleData = {
         jobTitle,
         isLoading,
+        saleCenters,
         errorMsg,
         setJobTitle,
         homeTown,
@@ -62,7 +81,8 @@ export default function SalesProvider({children}){
         setHomeTown,
         isFormComplete,
         salesCredential,
-        handelSalseFromSubmit
+        handelSalseFromSubmit,
+        getSaleCenter
     };
 
 

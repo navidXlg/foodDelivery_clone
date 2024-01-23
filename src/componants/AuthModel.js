@@ -35,7 +35,7 @@ export default function AuthModel(){
         onClick={() => setModel(null)}
         className="fixed inset-0 bg-gray-300 opacity-50">
       </div>
-      <div dir='rtl' className="fixed inset-x-1/3 top-24 max-h-fit px-8 py-4 rounded-lg shadow-md bg-gray-50 flex flex-col">
+      <div dir='rtl' className="fixed animate-drop-slow  inset-x-1/3 top-24 max-h-fit px-8 py-4 rounded-lg shadow-md bg-gray-50 flex flex-col">
         <div className='flex justify-between items-center'>
           <IoMdClose className = "cursor-pointer" 
           onClick={() => setModel(false)}/>

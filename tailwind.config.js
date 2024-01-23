@@ -6,19 +6,19 @@ module.exports = {
   mode: 'jit',
   theme: {
     extend: {
+      keyframes: {
+        drop: {
+          '0%': {transform: 'translateY(-400px)'},
+          '100%': {transform: 'translateY(0)'},
+        },
+      },
+      animation : {
+        'drop-slow': 'drop .8s ease-in',
+      },
       colors: {
         purpleSnapp: {
           300: '#ff00A6',
           400: '#fff5fc'
-        },
-        keyframes: {
-          drop: {
-            '0%': { transform: 'translateY(-500px)' },
-            '100%': {transform: 'translateY(500px)'},
-          },
-        },
-        animation: {
-          drop: 'drop 2ms ease-in',
         },
         },
         screens: {
@@ -29,5 +29,5 @@ module.exports = {
     },
   },
   plugins: [],
-}
+  }
 }

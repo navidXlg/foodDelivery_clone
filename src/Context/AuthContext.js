@@ -68,9 +68,7 @@ export default function AuthProvider({children}){
            await account.create(ID.unique(), email, password, name);
            setSuccesMessage(true);
            await account.createEmailSession(email, password);
-           const acc = await account.get();
-           await teams.createMembership("659a642329b145e1ca44", [Permission.read(Role.any())], 
-           email, acc.$id);
+           const acc = await account.get();;
            setActiveAccount(acc);           
         }catch(err){
             setSuccesMessage(false);

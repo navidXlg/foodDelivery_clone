@@ -32,7 +32,6 @@ export default function MapProvider({children}){
         popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
 
-    console.log(activeAccount?.$id)
     const setClientLocation = async () => {
         setIsloading(true);
         try{
