@@ -1,29 +1,10 @@
-import { useState } from "react"
+import { orderPropertiesconfig } from "../data/data";
 
 
 
 export default function OrderProperties(){
     const [orderProp, setOrderProp] = useState([]);
-    const orderPropertiesconfig = [
-        {
-            label:"پیک اسنپ‌فود",
-        },
-        {
-            label:"دارای کوپن",
-        },
-        {
-            label:"دارای تخفیف",
-        },
-        {
-            label:"فودپرو",
-        },
-        {
-            label:"به‌صرفه",
-        },
-        {
-            label:"خوش‌قیمت",
-        },
-    ];
+
 
     const handelToggle = (label) => {
         if(orderProp.includes(label)){

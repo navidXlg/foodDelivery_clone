@@ -4,34 +4,47 @@ import { productFilterOptions } from "../data/data";
 import ResturantInfo from "./ResturantInfo";
 import useSalesContext from "../Hooks/useSalesContext";
 import { useParams } from "react-router-dom";
-import { BeatLoader } from "react-spinners";
 import { useEffect } from "react";
-
+import { useLocation } from 'react-router-dom';
+import CardSkelton from "../Pages/CardSkelton";
+import { useScrollToTop } from "../Hooks/useScrollTop";
 
 
 export default function ProductList ({className}){
 
 
     const {filterProducts, setFilterProducts} = useOrderContext();
-    const {getSaleCenter, saleCenters, isLoading} = useSalesContext();
+    const {getSaleCenter, saleCenters, isLoading, salesCenterFilter, setSalesCenterFilter} = useSalesContext();
     const {productID} = useParams();
+    const loaction = useLocation();
+    useScrollToTop();
 
     useEffect(() =>{
         getSaleCenter(productID);
-    },[])
 
+    },[loaction.pathname,salesCenterFilter ]);
 
-    return  <div className={`flex flex-col gap-4  ${className}`}>
+    let salseCenterFinal;
+
+    if(loaction.pathname.includes("resturants") && salesCenterFilter){
+         salseCenterFinal = saleCenters.filter(item => item.data.filtering === salesCenterFilter);
+    }else{
+        salseCenterFinal = saleCenters;
+    }
+    
+
+    return  <div className={`flex flex-col gap-4 ${className}`}>
              {
                 isLoading ? 
-                <BeatLoader className="mx-auto mt-52" color="rgba(214, 54, 168, 1)" size={20} />:
+                <CardSkelton quntite={7} />:
                 <>
                 <Dropdown title = "به ترتیب پیش فرض" onChange={setFilterProducts}
                 value ={filterProducts} options={productFilterOptions}
-                 className = "w-fit"/>
+                className = "w-fit"/>
                 <div className="flex items-center justify-start gap-3 flex-wrap">
                     {
-                        saleCenters.map(item => <ResturantInfo key={item.data.id} item = {item}/>)
+                        salseCenterFinal.length > 0 ? salseCenterFinal.map(item => <ResturantInfo key={item.data.id} item = {item}/>):
+                        <p className="font-bold mx-auto mt-28 text-xl text-purpleSnapp-300">موردی برای نمایش وجود ندارد . </p>
                     }
                 </div>
                 </>

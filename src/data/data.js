@@ -7,48 +7,45 @@ export const catgoryItems = [
     {
      src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_4_603508a14ab73_img_st_supermarket.png",
      title : "سوپرمارکت",
-     titleId : "resturacts"
-
-     
+     titleId : "superMarket"
      },
      {
     src :   "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_2_603508b330711_img_st_cafe.png",
     title : "کافه",
-    titleId : "resturants"
-
+    titleId : "cafe"
     }, 
     {
      src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_3_603508a95b9be_img_st_sweet.png",
      title : "شیرینی",
-    titleId : "resturants"
+    titleId : "sweet"
 
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_7_60350883d6e43_img_st_nut.png",
      title : "آجیل",
-    titleId : "resturants"
+    titleId : "nut",
 
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_8_6035087b463a3_img_st_icecream.png",
      title : "بستنی",
-    titleId : "resturants"
+     titleId : "iceCream"
 
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_11_603507afc9a32_img_st_meat.png",
-     title : "گوشت",
-      titleId : "resturants"
+     title : "پروتئین",
+      titleId : "protin"
     },
     {
      src :  "https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_6_6035088cbcde4_img_st_fruit.png",
      title : "میوه",
-     titleId : "resturants"
+     titleId : "fruit"
     },
     {
      src :"https://cdn.snappfood.ir/uploads/images/review-app/icons/count/desktop_9_603b811b1d540_img_st_other2.png",
      title : "سایر",
-     titleId : "resturants"
+     titleId : "other"
 
     }
  ];
@@ -56,51 +53,44 @@ export const catgoryItems = [
 export const productTitle = [
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_irani_1.jpg",
-        title : "ایرانی"
+        title : "ایرانی",
+        titleId : "irani"
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_fastfood_1.jpg",
-        title : "فست فود"
-    },
-    {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_kebab_1.jpg",
-        title : "کباب"
-    },
-    {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_pizza_1.jpg",
-        title : "پیتزا"
-    },
-    {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_burger_1.jpg",
-        title : "برگر"
-    },
-    {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_sandwich_1.jpg",
-        title : "ساندویچ"
+        title : "فست فود",
+        titleId : "fastFood"
+
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_asian_1.jpg",
-        title : "سوخاری"
+        title : "سوخاری",
+        titleId : "soxari"
+
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_seafood_1.jpg",
-        title : "پاستا"
-    },
-    {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_salad_1.jpg",
-        title : "سالاد"
+        title : "پاستا",
+        titleId : "pasta"
+
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_italy_1.jpg",
-        title : "دریایی"
+        title : "دریایی",
+        titleId : "seaFood"
+
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_sokhari_1.jpg",
-        title : "بین الملل"
+        title : "بین الملل",
+        titleId : "internation"
+
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_gilani_1.jpg",
-        title : "گیلانی"
+        title : "گیلانی",
+        titleId : "gilani"
+
     }
 ];
 
@@ -244,4 +234,43 @@ export const productFilterOptions = [
       label :"ارزان ترین",
       value :"cheapProducts" ,
   },
-] 
+] ;
+
+export const dataFilterConig = [
+  {
+      label : "همه",
+      value : "all"
+  },
+  {
+      label : "اقتصادی",
+      value : "econimic"
+  },
+  {
+      label : "متوسط",
+      value : "avrage"
+  },
+  {
+      label : "گران",
+      value : "expoensive"
+  },
+];
+export const orderPropertiesconfig = [
+  {
+      label:"پیک اسنپ‌فود",
+  },
+  {
+      label:"دارای کوپن",
+  },
+  {
+      label:"دارای تخفیف",
+  },
+  {
+      label:"فودپرو",
+  },
+  {
+      label:"به‌صرفه",
+  },
+  {
+      label:"خوش‌قیمت",
+  },
+];

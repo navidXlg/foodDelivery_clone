@@ -1,7 +1,6 @@
 import { createContext, useState } from "react";
 import { DATABASE_ID, SALESCENTER_COLLECTION, databases } from "../appWriteConfig";
 import { ID } from "appwrite";
-import SalesCenters from "../componants/Salescenters";
 
 
 export const salesContext = createContext();
@@ -21,6 +20,10 @@ export default function SalesProvider({children}){
         phoneNumber:""
     });
     const [saleCenters, setSaleCenter] = useState([]);
+    const [salesCenterFilter,setSalesCenterFilter ] = useState("");
+
+
+
 
     const handelFormChange = (event) => {
         let name = event.target.id;
@@ -76,6 +79,8 @@ export default function SalesProvider({children}){
         saleCenters,
         errorMsg,
         setJobTitle,
+        salesCenterFilter,
+        setSalesCenterFilter,
         homeTown,
         handelFormChange, 
         setHomeTown,

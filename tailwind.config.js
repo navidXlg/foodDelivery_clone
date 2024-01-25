@@ -8,12 +8,12 @@ module.exports = {
     extend: {
       keyframes: {
         drop: {
-          '0%': {transform: 'translateY(-400px)'},
+          '0%': {transform: 'translateY(-100px)'},
           '100%': {transform: 'translateY(0)'},
         },
       },
       animation : {
-        'drop-slow': 'drop .8s ease-in',
+        'drop-slow': 'drop .2s ease-in',
       },
       colors: {
         purpleSnapp: {
