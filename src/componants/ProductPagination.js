@@ -4,14 +4,25 @@ import { Navigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from "react";
+import useSalesContext from "../Hooks/useSalesContext";
 
 
-export default function ProductPagination({ title, products}){
 
-    const items = new Array(10).fill(0);
+
+export default function ProductPagination({title, filterType}){
+
+    const {saleCenters, getSaleCenter} = useSalesContext();
     const [slideView, setSlideView] = useState(4); 
 
-   useEffect(()=>{
+
+    useEffect(() => {
+       getSaleCenter("resturants");
+      },[]);
+      
+      
+      const items = saleCenters.sort((a,b) => b.data[filterType] - a.data[filterType]);
+      useEffect(()=>{
+
       window.addEventListener("resize", changeWidht);
          function changeWidht(){
             const width = window.innerWidth;
@@ -29,21 +40,23 @@ export default function ProductPagination({ title, products}){
          return () => {
             window.removeEventListener("resize", changeWidht);
          };
-   },[]);
 
+       },[]);
 
 
     return <div className = "my-20">
              <p className = "text-2xl font-bold">{title}</p>
-             <Swiper className="scroll-smooth sm: h-fit mt-7 flex items-center justify-center" modules={[Navigation, A11y]}
+             <Swiper 
+               className="scroll-smooth sm: h-fit mt-7 flex items-center justify-center" 
+               modules={[Navigation, A11y]}
                spaceBetween={30}
                slidesPerView={slideView}
                navigation>
-               {items.map(item =>
+               {items?.map(item =>
                  <SwiperSlide>
-                   <ResturantInfo/>
+                   <ResturantInfo item={item}/>
                  </SwiperSlide>
                  )}
                </Swiper>
            </div>
-   };
+    };

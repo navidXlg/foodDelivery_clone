@@ -52,14 +52,34 @@ export const catgoryItems = [
 
 export const productTitle = [
     {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_irani_1.jpg",
-        title : "ایرانی",
-        titleId : "irani"
+      src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_irani_1.jpg",
+      title : "ایرانی",
+      titleId : "irani"
     },
     {
-        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_fastfood_1.jpg",
-        title : "فست فود",
-        titleId : "fastFood"
+      src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_kebab_1.jpg",
+      title : "کباب",
+      titleId : "kebab"
+    },
+    {
+      src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_salad_1.jpg",
+      title : "سالاد",
+      titleId : "salad"
+    },
+    {
+      src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_fastfood_1.jpg",
+      title : "فست فود",
+      titleId : "fastFood"
+    },
+    {
+      src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_pizza_1.jpg",
+      title : "پیتزا",
+      titleId : "pizza"
+    },
+    {
+        src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_sandwich_1.jpg",
+        title : "برگر",
+        titleId : "burger"
 
     },
     {
@@ -78,7 +98,11 @@ export const productTitle = [
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_italy_1.jpg",
         title : "دریایی",
         titleId : "seaFood"
-
+    },
+    {
+      src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_burger_1.jpg",
+      title : "برگر",
+      titleId : "burger"
     },
     {
         src:"https://cdn.snappfood.ir/uploads/images/tags/website_image_sokhari_1.jpg",

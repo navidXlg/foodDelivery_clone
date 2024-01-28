@@ -4,6 +4,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 
+
 export default function ResturantInfo({item}){
 
 
@@ -16,7 +17,7 @@ export default function ResturantInfo({item}){
                   <TiStar className="text-yellow-400 "/>
                   <p className="font-semibold text-gray-600">{
                   item.data.rating ?
-                  toFixed(parseFloat(item.data.rating)):
+                  Math.round((parseFloat(item.data.rating))*100)/100:
                   "NEW"
                   }</p>
                   <p className="text-gray-300">({item.data.commentCount})</p>

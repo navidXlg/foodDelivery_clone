@@ -22,4 +22,4 @@ export default function InfoTable(){
                 <p className="font-semibold">سابقه فعالیت از سال ۸۸</p>
             </div>
          </div>
-}
+ };

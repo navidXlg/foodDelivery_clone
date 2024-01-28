@@ -12,6 +12,7 @@ const ProductCenterPage = lazy(() => import("./Pages/ProductCenterPage"));
 export default function App (){
 
 
+
   return <BrowserRouter>
           <Routes>
             <Route path = "/" element = {<SuspenseLoading page={<HomePage/>}/>}/>

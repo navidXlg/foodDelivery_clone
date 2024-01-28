@@ -11,15 +11,14 @@ export default function MainPage(){
               <MainNavbar/>
               <div className="mx-2 sm:mx-12 md:mx-24">
                 <GroupingCard className = "mt-24 sm:mt-36 md:mt-72"/>
-                <ProductPagination title = "پیشنهادکاربران"/>
-                <ProductPagination title = "تازه ترین ها"/>
-                <ProductPagination title = "برترین ها"/>
-                <ProductPagination title = "مزه های خاص"/>
+                <ProductPagination title = "پیشنهادکاربران" filterType ="rating"/>
+                <ProductPagination title = "تازه ترین ها" filterType ="commentCount"/>
+                <ProductPagination title = "برترین ها" filterType ="rating"/>
+                <ProductPagination title = "مزه های خاص" filterType ="rating"/>
               </div>
               <div dir="ltr">
               <SalesCenters/>
               </div>
               <Footer/>
             </div>
-
   };
