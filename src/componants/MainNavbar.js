@@ -1,8 +1,8 @@
 import useAuthContext from "../Hooks/useAuthContext";
 import SnappLogo from "../assets/SnappLogo";
 import { TbCurrentLocation } from "react-icons/tb";
-import Button from "./Button";
-import AuthModel from "./AuthModel";
+import Button from "./utils/Button";
+import AuthModel from "./form/AuthModel";
 import { Link } from "react-router-dom";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 import ProductsCatgory from "./ProductsCatgory";
@@ -10,8 +10,8 @@ import { CiSearch } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoMdExit } from "react-icons/io";
 import { ClipLoader } from "react-spinners";
-import MapModel from "./MapModel";
-import SearchBar from "./SearchBar";
+import MapModel from "./map/MapModel";
+import SearchBar from "./utils/SearchBar";
 
 
 export default function MainNavbar(){

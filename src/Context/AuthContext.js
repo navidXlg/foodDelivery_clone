@@ -73,6 +73,7 @@ export default function AuthProvider({children}){
         }catch(err){
             setSuccesMessage(false);
             setError(err.message);
+            setAuthState("succes")
         }finally{
            setIsloading(false);
         }

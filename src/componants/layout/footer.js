@@ -1,4 +1,4 @@
-import SnappLogo from "../assets/SnappLogo";
+import SnappLogo from "../../assets/SnappLogo";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { PiTelegramLogoDuotone } from "react-icons/pi";

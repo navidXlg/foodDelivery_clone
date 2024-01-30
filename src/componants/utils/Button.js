@@ -10,7 +10,7 @@ export default function Button({
   ...rest
 }) {
   const classes = className(
-    'px-3 py-3 font-bold border',
+    'p-2 sm:p-3 font-bold border',
     {
       'rounded-lg': rounded,
       'bg-white': outline,

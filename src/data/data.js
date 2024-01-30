@@ -267,7 +267,7 @@ export const dataFilterConig = [
   },
   {
       label : "اقتصادی",
-      value : "econimic"
+      value : "is_economical"
   },
   {
       label : "متوسط",
@@ -275,7 +275,7 @@ export const dataFilterConig = [
   },
   {
       label : "گران",
-      value : "expoensive"
+      value : !"is_economical"
   },
 ];
 export const orderPropertiesconfig = [

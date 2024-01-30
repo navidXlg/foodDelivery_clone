@@ -1,4 +1,4 @@
-import Accordion from "./Accordin";
+import Accordion from "./utils/Accordin";
 import { accordinData } from "../data/data";
 
 

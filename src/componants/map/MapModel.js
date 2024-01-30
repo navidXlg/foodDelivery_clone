@@ -2,10 +2,10 @@ import { IoMdClose } from 'react-icons/io';
 import 'leaflet/dist/leaflet.css';
 import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
-import useAuthContext from '../Hooks/useAuthContext';
-import Button from './Button';
+import useAuthContext from '../../Hooks/useAuthContext';
+import Button from '../utils/Button';
 import Map from './Map';
-import useMapContext from '../Hooks/useMapContext';
+import useMapContext from '../../Hooks/useMapContext';
 import { BeatLoader } from 'react-spinners';
 
 
@@ -29,7 +29,7 @@ export default function MapModel(){
             onClick={() => setModel(false)}
             className="fixed inset-0 z-40 bg-gray-300 opacity-65"
           ></div>
-          <div dir="rtl" className="rounded-lg shadow-md fixed inset-x-1/4 top-24 max-h-fit p-10 bg-white z-40">
+          <div dir="rtl" className="animate-drop-slow rounded-lg shadow-md fixed inset-x-1/4 top-16 max-h-fit p-10 bg-white z-40">
           <IoMdClose className = "cursor-pointer" onClick={() => setModel(null)}/>
           <p className = "text-2xl font-semibold mt-8">انتخاب آدرس</p>
           <div className="flex items-center justify-between">

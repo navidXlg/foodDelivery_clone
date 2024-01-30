@@ -1,5 +1,5 @@
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
-import Button from "./Button";
+import Button from "./utils/Button";
 import { Link } from "react-router-dom";
 
 

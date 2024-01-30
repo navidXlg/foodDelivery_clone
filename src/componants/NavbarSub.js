@@ -1,5 +1,5 @@
 import SnappLogo from "../assets/SnappLogo";
-import Button from "./Button";
+import Button from "./utils/Button";
 import { Link } from "react-scroll";
 import { navbarSubItems } from "../data/data";
 

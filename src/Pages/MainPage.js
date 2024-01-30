@@ -1,8 +1,8 @@
 import GroupingCard from "../componants/GroupingCard";
 import MainNavbar from "../componants/MainNavbar";
 import SalesCenters from "../componants/Salescenters";
-import ProductPagination from "../componants/ProductPagination";
-import Footer from "../componants/footer";
+import ProductPagination from "../componants/layout/ProductPagination";
+import Footer from "../componants/layout/footer";
 
 
 export default function MainPage(){

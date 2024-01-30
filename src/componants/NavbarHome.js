@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import useAuthContext from "../Hooks/useAuthContext";
 import SnappLogo from "../assets/SnappLogo";
-import AuthModel from "./AuthModel";
-import Button from "./Button";
+import AuthModel from "./form/AuthModel";
+import Button from "./utils/Button";
 import { HiOutlineBuildingStorefront } from "react-icons/hi2";
 import { IoPersonOutline } from "react-icons/io5";
 

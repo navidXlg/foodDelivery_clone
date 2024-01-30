@@ -1,6 +1,6 @@
 import MainNavbar from "../componants/MainNavbar";
 import ProductFilter from "../componants/ProductFilter";
-import Footer from "../componants/footer";
+import Footer from "../componants/layout/footer";
 import ProductList from "../componants/ProductList";
 
 

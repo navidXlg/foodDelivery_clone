@@ -1,12 +1,10 @@
-import ResturantInfo from "./ResturantInfo";
+import ResturantInfo from "../ResturantInfo";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from "react";
-import useSalesContext from "../Hooks/useSalesContext";
-
-
+import useSalesContext from "../../Hooks/useSalesContext";
 
 
 export default function ProductPagination({title, filterType}){
@@ -14,11 +12,9 @@ export default function ProductPagination({title, filterType}){
     const {saleCenters, getSaleCenter} = useSalesContext();
     const [slideView, setSlideView] = useState(4); 
 
-
     useEffect(() => {
        getSaleCenter("resturants");
       },[]);
-      
       
       const items = saleCenters.sort((a,b) => b.data[filterType] - a.data[filterType]);
       useEffect(()=>{

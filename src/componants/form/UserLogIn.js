@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import Button from "./Button";
-import useAuthContext from "../Hooks/useAuthContext";
+import Button from "../utils/Button";
+import useAuthContext from "../../Hooks/useAuthContext";
 import { BeatLoader } from "react-spinners";
 import { FaRegFaceFrown } from "react-icons/fa6";
-import CustomInput from "./CustomInput";
+import CustomInput from "../utils/CustomInput";
 
 
 export default function UserLogIn (){
@@ -18,7 +18,7 @@ export default function UserLogIn (){
             
     return <>      
             <div className='mb-8'>
-             <span className="text-lg font-bold cursor-pointer border-b-2 border-purpleSnapp-300" onClick={() => setAuthState("submit")} > عضوییت</span>
+             <span className="text-sm md:text-lg font-bold hover:text-purpleSnapp-300 duration-200 cursor-pointer border-b-2 border-purpleSnapp-300" onClick={() => setAuthState("submit")} > عضوییت</span>
             </div>
             <form className='flex gap-2 flex-col' onSubmit={handleSubmit(formLogIn)}>
             <CustomInput label = "ایمیل" register={{...register('email')}} type="email"/>

@@ -1,7 +1,7 @@
 import useSalesContext from "../Hooks/useSalesContext";
 import HeroImg from "../assets/Artwork.png";
-import Button from "./Button";
-import Dropdown from "./DropDown";
+import Button from "./utils/Button";
+import Dropdown from "./utils/DropDown";
 import { BeatLoader } from "react-spinners";
 import InputSalseSubmit from "./InputSalseSubmit";
 import { job, cities } from "../data/data";
@@ -16,9 +16,12 @@ export default function SubmitionForm(){
      setHomeTown,
      isFormComplete,
      handelFormChange,
+     errorMsg,
      homeTown,
      salesCredential,
      handelSalseFromSubmit} = useSalesContext();
+
+
 
   const handelSubmit = (event) => {
     event.preventDefault();
@@ -43,7 +46,7 @@ export default function SubmitionForm(){
                 <InputSalseSubmit id="name" handelChange={handelFormChange} labelTitle={"نام مالک فروشگاه"} value={salesCredential.name}/>
                 <InputSalseSubmit id="lastName" handelChange={handelFormChange} labelTitle={"نام خانوادگی مالک فروشگاه"} value ={salesCredential.lastName}/>
                 <InputSalseSubmit id="phoneNumber" handelChange={handelFormChange} labelTitle={"شماره تلفن همراه"} value={salesCredential.phoneNumber}/>
-                <Button off snapp = {isFormComplete} className ="text-white font-bold"  
+                <Button off rounded snapp = {isFormComplete} className ="text-white font-bold"  
                 disabled = {!isFormComplete}>
                   {isLoading ? 
                     <BeatLoader
@@ -52,6 +55,11 @@ export default function SubmitionForm(){
                     size={9}/>
                     :"دریافت کد تایید"}
                 </Button>
+                <p className=" text-center w-[350px] text-red-600">
+                  {
+                  errorMsg ? errorMsg.message : ""
+                  }
+                  </p>
               </form>
            </div>
 };

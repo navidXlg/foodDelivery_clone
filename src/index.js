@@ -18,7 +18,7 @@ root.render(
         <App /> 
         </OrderProvider>
        </MapProvider> 
-      </AuthProvider>
+      </AuthProvider>  
     </SalesProvider>
   </React.StrictMode>
 );

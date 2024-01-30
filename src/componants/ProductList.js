@@ -1,5 +1,5 @@
 import useOrderContext from "../Hooks/useOrderContext";
-import Dropdown from "./DropDown";
+import Dropdown from "./utils/DropDown";
 import { productFilterOptions } from "../data/data";
 import ResturantInfo from "./ResturantInfo";
 import useSalesContext from "../Hooks/useSalesContext";
@@ -14,23 +14,19 @@ export default function ProductList ({className}){
 
 
     const {filterProducts, setFilterProducts} = useOrderContext();
-    const {getSaleCenter, saleCenters, isLoading, salesCenterFilter, setSalesCenterFilter} = useSalesContext();
+    const {getSaleCenter, saleCenters, isLoading, salesCenterFilter} = useSalesContext();
     const {productID} = useParams();
     const loaction = useLocation();
     useScrollToTop();
 
     useEffect(() =>{
         getSaleCenter(productID);
-
     },[loaction.pathname,salesCenterFilter ]);
 
+    
     let salseCenterFinal;
-
-    if(loaction.pathname.includes("resturants") && salesCenterFilter){
-         salseCenterFinal = saleCenters.filter(item => item.data.filtering === salesCenterFilter);
-    }else{
-        salseCenterFinal = saleCenters;
-    }
+    loaction.pathname.includes("resturants") && salesCenterFilter ? salseCenterFinal = saleCenters.filter(item => item.data.filtering === salesCenterFilter):
+    salseCenterFinal = saleCenters;
     
 
     return  <div className={`flex flex-col gap-4 ${className}`}>

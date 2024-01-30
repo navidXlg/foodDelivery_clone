@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import Button from "./Button";
-import useAuthContext from "../Hooks/useAuthContext";
+import Button from "../utils/Button";
+import useAuthContext from "../../Hooks/useAuthContext";
 import { FaRegFaceFrown } from "react-icons/fa6";
 import { BeatLoader } from "react-spinners";
-import CustomInput from "./CustomInput";
+import CustomInput from "../utils/CustomInput";
 
 
 export default function UserRegisteration (){
@@ -15,9 +15,11 @@ export default function UserRegisteration (){
     };
 
             
+
+    
     return <>      
             <div className='mb-8'>
-             <span className ="text-lg font-bold cursor-pointer border-b-2 border-purpleSnapp-300" onClick={() => setAuthState("logIn")} >ورود</span>
+             <span className ="text-sm md:text-lg font-bold hover:text-purpleSnapp-300 duration-200 cursor-pointer border-b-2 border-purpleSnapp-300" onClick={() => setAuthState("logIn")} >ورود</span>
             </div>
             <form className='flex gap-2 flex-col' onSubmit={handleSubmit(formSubmit)}>
               <CustomInput label = "نام کاربری" register={{...register('name')}} type="text"/>

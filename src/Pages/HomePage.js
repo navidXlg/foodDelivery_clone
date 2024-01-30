@@ -1,10 +1,10 @@
 import NavabarHome from "../componants/NavbarHome";
-import Hero from "../componants/Hero";
+import Hero from "../componants/layout/Hero";
 import pizza from "../assets/hero-image.png";
 import ProductsCatgory from "../componants/ProductsCatgory";
 import GroupingCard from "../componants/GroupingCard";
 import SalesCenters from "../componants/Salescenters";
-import Footer from "../componants/footer";
+import Footer from "../componants/layout/footer";
 import { useScrollToTop } from "../Hooks/useScrollTop";
 import useAuthContext from "../Hooks/useAuthContext";
 import useRedirectIfActiveAccount from "../Hooks/useRedirectActiveAccount";
@@ -14,10 +14,11 @@ import useRedirectIfActiveAccount from "../Hooks/useRedirectActiveAccount";
 export default function HomePage(){
 
 
+
+
    useScrollToTop(); 
    const {activeAccount, setModel} = useAuthContext();
    useRedirectIfActiveAccount(activeAccount, "/mainPage");
-
 
     return <main className="m-auto max-w-screen-2xl 3xl:mx-auto">
              <div className="lg:mx-24">
@@ -34,4 +35,4 @@ export default function HomePage(){
              </div>
              <Footer/>
            </main>
-   };
+    };

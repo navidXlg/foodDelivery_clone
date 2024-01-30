@@ -20,8 +20,15 @@ export default function SalesProvider({children}){
         phoneNumber:""
     });
     const [saleCenters, setSaleCenter] = useState([]);
-    const [salesCenterFilter,setSalesCenterFilter ] = useState("");
+    const [salesCenterFilter,setSalesCenterFilter] = useState("");
+    const [pricefilter, setPriceFilter] = useState("");
 
+    // useEffect(() => {
+    //     if(pricefilter !== "all"){
+    //         const salews = saleCenters.filter(item => item.data?.pricefilter === true);
+    //         setSaleCenter(salews);
+    //     }
+    // },[pricefilter])
 
 
 
@@ -33,7 +40,7 @@ export default function SalesProvider({children}){
             setIsFormComplete(true);
             if(salesCredential[item].trim() === "" ) setIsFormComplete(false);
          };
-      };
+    };
 
     const handelSalseFromSubmit = async(creadential) =>{
         setIsloading(true);
@@ -48,10 +55,9 @@ export default function SalesProvider({children}){
             };
             try{
                 await databases.createDocument(DATABASE_ID, SALESCENTER_COLLECTION, ID.unique(), data);
-                setIsloading(false);
-    
             }catch(error){
                 setErrorMsg(error);
+            }finally{
                 setIsloading(false);
             }
         };
@@ -65,12 +71,12 @@ export default function SalesProvider({children}){
             setSaleCenter(resJson);
         }catch(err){
             setErrorMsg(err);
-
+            console.log("nonsense");
         }finally{
             setIsloading(false);
         }
+        console.log(errorMsg)
     };
-
 
 
     const saleData = {
@@ -87,9 +93,10 @@ export default function SalesProvider({children}){
         isFormComplete,
         salesCredential,
         handelSalseFromSubmit,
+        pricefilter, 
+        setPriceFilter,
         getSaleCenter
     };
-
 
     return <salesContext.Provider value={saleData}>
                 {children}

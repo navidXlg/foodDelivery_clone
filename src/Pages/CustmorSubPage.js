@@ -5,7 +5,7 @@ import SnappFoodBenifit from "../componants/SnappFoodBenifit";
 import SubmitionForm from "../componants/SubmitionForm";
 import SubmitionInfo from "../componants/SubmitionInfo";
 import SubmitionStep from "../componants/SubmitionStep";
-import Footer from "../componants/footer";
+import Footer from "../componants/layout/footer";
 import { useScrollToTop } from "../Hooks/useScrollTop";
 
 

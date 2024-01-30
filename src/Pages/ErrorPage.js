@@ -1,5 +1,5 @@
 import SnappLogo from "../assets/SnappLogo";
-import Button from "../componants/Button";
+import Button from "../componants/utils/Button";
 import { useNavigate } from "react-router-dom";
 
 
