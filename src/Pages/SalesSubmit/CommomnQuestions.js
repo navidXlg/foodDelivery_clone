@@ -1,5 +1,5 @@
-import Accordion from "./utils/Accordin";
-import { accordinData } from "../data/data";
+import Accordion from "../../componants/utils/Accordin";
+import { accordinData } from "../../data/data";
 
 
 

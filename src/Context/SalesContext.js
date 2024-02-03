@@ -31,7 +31,7 @@ export default function SalesProvider({children}){
     // },[pricefilter])
 
 
-
+     // Function to handle form changes and update sales credentials
     const handelFormChange = (event) => {
         let name = event.target.id;
         let value = event.target.value;
@@ -42,6 +42,7 @@ export default function SalesProvider({children}){
          };
     };
 
+    // Function to handle sales form submission
     const handelSalseFromSubmit = async(creadential) =>{
         setIsloading(true);
         if(isFormComplete){
@@ -66,6 +67,7 @@ export default function SalesProvider({children}){
     const getSaleCenter = async (product) => {
         setIsloading(true);
         try {
+            // Fetch sales centers data from the server
             const res = await fetch(`http://localhost:3001/${product}`);
             const resJson = await res.json();
             setSaleCenter(resJson);

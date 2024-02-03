@@ -9,14 +9,13 @@ import AuthSucces from './AuthSucces';
 
 export default function AuthModel(){
 
-
+  // Destructure necessary state and functions from the authentication context
   const {
     setModel,
-    authState,
-    succesMessage,
-    setAuthState} = useAuthContext();
+    authState} = useAuthContext();
 
-  // Handeling model close when comonent dose not render
+
+  // Effect hook to manage modal close behavior and prevent page scrolling
   useEffect(() => {
     document.body.classList.add('overflow-hidden');
     return () => {
@@ -24,11 +23,8 @@ export default function AuthModel(){
     };
   }, []);
 
-  // Adding Logic of when to show succes Message and time duration
-  // To show succes Componant
 
-
-  
+  // Return the authentication modal using ReactDOM.createPortal()
   return ReactDOM.createPortal(
     <div className="z-40 relative">
       <div
@@ -41,6 +37,8 @@ export default function AuthModel(){
           onClick={() => setModel(false)}/>
           <SnappLogo className="size-14"/>
         </div>
+        
+         {/* Render different authentication components based on authState */}
         {
           authState === "logIn"?
           <UserLogIn/>

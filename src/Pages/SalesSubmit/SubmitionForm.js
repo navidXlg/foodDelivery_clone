@@ -1,15 +1,18 @@
-import useSalesContext from "../Hooks/useSalesContext";
-import HeroImg from "../assets/Artwork.png";
-import Button from "./utils/Button";
-import Dropdown from "./utils/DropDown";
+import useSalesContext from "../../Hooks/useSalesContext";
+import HeroImg from "../../assets/hero-image.png";
+import Button from "../../componants/utils/Button";
+import Dropdown from "../../componants/utils/DropDown";
 import { BeatLoader } from "react-spinners";
-import InputSalseSubmit from "./InputSalseSubmit";
-import { job, cities } from "../data/data";
+import InputSalseSubmit from "../../componants/utils/InputSalseSubmit";
+import { job, cities } from "../../data/data";
 
-
-
+/**
+ * SubmissionForm component represents the form for submitting sales information.
+ * It includes dropdowns, input fields, and a submit button.
+ */
 export default function SubmitionForm(){
 
+  // Destructuring values from the sales context hook
   const {setJobTitle,
      jobTitle,
      isLoading,
@@ -29,7 +32,7 @@ export default function SubmitionForm(){
     };   
 
 
-    return <div className="flex items-center mt-14 max-w-screen-2xl flex-col text-center lg:text-right gap-10 lg:flex-row 3xl:mx-auto">
+    return <div data-testid = "formSubmition" className="flex items-center mt-14 max-w-screen-2xl flex-col text-center lg:text-right gap-10 lg:flex-row 3xl:mx-auto">
               <div className="self-center flex flex-col gap-8">
                 <p className="text-4xl font-bold">در کمتر از ۱۰ دقیقه ثبت‌نام کنید و<br/> به اسنپ‌فود بپیوندید!</p>
                 <p className="text-xl">دون نیاز به مراجعهٔ حضوری، می‌توانید صفر تا صد قرارداد را در همین صفحه انجام دهید.</p>

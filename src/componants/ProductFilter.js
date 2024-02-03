@@ -8,12 +8,17 @@ import { useLocation } from 'react-router-dom';
 
 export default function ProductFilter({className}){
 
+    // Get the current location using the useLocation hook
     const location = useLocation();
-    return <div className = {`flex flex-col items-center gap-5${className}`}>
-        {
-            location.pathname.includes("resturants") && <GroupingVertical/>
-        }
-        <PriceClass/>
-        <OrderProperties/>
-    </div>
-};
+    return (
+        // Container for product filters
+        <div className={`flex flex-col items-center gap-5 ${className}`}>
+            {/* Display GroupingVertical filter only if the route includes "restaurants" */}
+            {location.pathname.includes('resturants') && <GroupingVertical />}
+            {/* Display PriceClass filter */}
+            <PriceClass />
+            {/* Display OrderProperties filter */}
+            <OrderProperties />
+        </div>
+    );
+}

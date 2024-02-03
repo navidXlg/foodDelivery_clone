@@ -1,23 +1,27 @@
-import NavabarHome from "../componants/NavbarHome";
-import Hero from "../componants/layout/Hero";
-import pizza from "../assets/hero-image.png";
-import ProductsCatgory from "../componants/ProductsCatgory";
-import GroupingCard from "../componants/GroupingCard";
-import SalesCenters from "../componants/Salescenters";
-import Footer from "../componants/layout/footer";
-import { useScrollToTop } from "../Hooks/useScrollTop";
-import useAuthContext from "../Hooks/useAuthContext";
-import useRedirectIfActiveAccount from "../Hooks/useRedirectActiveAccount";
+import NavabarHome from "./NavbarHome";
+import Hero from "./Hero";
+import pizza from "../../assets/hero-image.png";
+import ProductsCatgory from "../../componants/ProductsCatgory";
+import GroupingCard from "../../componants/GroupingCard";
+import SalesCenters from "../../componants/Salescenters";
+import Footer from "../../componants/layout/footer";
+
+// Import custom hooks for scroll behavior and authentication
+import { useScrollToTop } from "../../Hooks/useScrollTop";
+import useAuthContext from "../../Hooks/useAuthContext";
+import useRedirectIfActiveAccount from "../../Hooks/useRedirectActiveAccount";
 
 
 
 export default function HomePage(){
 
-
-
-
-   useScrollToTop(); 
+   // Scroll to top on component mount
+   useScrollToTop();
+   
+   // Retrieve active account and set model for authentication
    const {activeAccount, setModel} = useAuthContext();
+
+   // Redirect if active account is present
    useRedirectIfActiveAccount(activeAccount, "/mainPage");
 
     return <main className="m-auto max-w-screen-2xl 3xl:mx-auto">

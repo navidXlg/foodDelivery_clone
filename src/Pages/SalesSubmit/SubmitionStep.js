@@ -5,9 +5,9 @@ import { FaHandshake } from "react-icons/fa";
 
 
 export default function SubmitionStep(){
+ 
 
-
-
+    
     return <div className="mt-16" id="submitionSteps">
              <p className="text-4xl font-bold mb-16">مراحل ثبت‌نام در اسنپ‌فود</p>
              <div className="flex items-center flex-col md:flex-row justify-between gap-12">
