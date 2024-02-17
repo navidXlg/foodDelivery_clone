@@ -21,7 +21,7 @@ export default function ProductList ({className}){
 
     useEffect(() =>{
         getSaleCenter(productID);
-    },[loaction.pathname,salesCenterFilter ]);
+    },[loaction.pathname, salesCenterFilter]);
 
     
     let salseCenterFinal;

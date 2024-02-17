@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { DATABASE_ID, SALESCENTER_COLLECTION, databases } from "../appWriteConfig";
+import { DATABASE_ID, SALESCENTER_COLLECTION, databases, superMarket,other, fruit, iceCream, nut, sweet, cafe, resturants } from "../appWriteConfig";
 import { ID } from "appwrite";
 
 
@@ -65,19 +65,17 @@ export default function SalesProvider({children}){
     };
 
     const getSaleCenter = async (product) => {
+        console.log(product)
         setIsloading(true);
         try {
             // Fetch sales centers data from the server
-            const res = await fetch(`http://localhost:3001/${product}`);
-            const resJson = await res.json();
-            setSaleCenter(resJson);
+             const response = await databases.listDocuments(DATABASE_ID , product);
+            setSaleCenter(response);
         }catch(err){
             setErrorMsg(err);
-            console.log("nonsense");
         }finally{
             setIsloading(false);
         }
-        console.log(errorMsg)
     };
 
 

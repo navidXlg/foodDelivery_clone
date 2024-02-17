@@ -1,5 +1,5 @@
 import useSalesContext from "../../Hooks/useSalesContext";
-import HeroImg from "../../assets/hero-image.png";
+import HeroImg from "../../assets/Artwork.png";
 import Button from "../../componants/utils/Button";
 import Dropdown from "../../componants/utils/DropDown";
 import { BeatLoader } from "react-spinners";
