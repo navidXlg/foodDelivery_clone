@@ -24,7 +24,7 @@ export default function GroupingCard({className, ...rest}){
 
 
    return (
-      <div className={`mt-16 max-w-screen-2xl 3xl:mx-auto ${className}`} dir="ltr">
+      <div data-testid="Groupingcard" className={`mt-16 max-w-screen-2xl 3xl:mx-auto ${className}`} dir="ltr">
           <div className="text-right mb-9 mr-5 font-bold">دسته بندی</div>
           <div className="grid mx-auto grid-cols-2 xs:grid-cols-2 justify-items-center sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-4 gap-y-8">
               {/* Map through product titles and render category cards */}

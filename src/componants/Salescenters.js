@@ -12,7 +12,7 @@ export default function SalesCenters(){
 
 
   return (
-    <div className="bg-gray-50 rounded-xl relative my-36 py-16 px-10 flex items-center justify-between text-right">
+    <div data-testid="Salescenters" className="bg-gray-50 rounded-xl relative my-36 py-16 px-10 flex items-center justify-between text-right">
         <div>
             <img src="https://snappfood.ir/static/images/vendor_pic.png" className="absolute hidden lg:block -top-14" alt="Vendor" />
         </div>

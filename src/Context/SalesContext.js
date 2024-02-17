@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { DATABASE_ID, SALESCENTER_COLLECTION, databases, superMarket,other, fruit, iceCream, nut, sweet, cafe, resturants } from "../appWriteConfig";
 import { ID } from "appwrite";
-
+import { productId } from "../Hooks/ProductIdApp";
 
 export const salesContext = createContext();
 
@@ -42,6 +42,7 @@ export default function SalesProvider({children}){
          };
     };
 
+
     // Function to handle sales form submission
     const handelSalseFromSubmit = async(creadential) =>{
         setIsloading(true);
@@ -64,13 +65,13 @@ export default function SalesProvider({children}){
         };
     };
 
+
     const getSaleCenter = async (product) => {
-        console.log(product)
         setIsloading(true);
         try {
             // Fetch sales centers data from the server
-             const response = await databases.listDocuments(DATABASE_ID , product);
-            setSaleCenter(response);
+            const {documents}= await databases.listDocuments(DATABASE_ID , productId(product));
+            setSaleCenter(documents);
         }catch(err){
             setErrorMsg(err);
         }finally{

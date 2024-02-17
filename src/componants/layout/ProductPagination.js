@@ -4,23 +4,16 @@ import { Navigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from "react";
-import useSalesContext from "../../Hooks/useSalesContext";
+import CardSkelton from "../../Pages/CardSkelton";
 
 
 
 
-export default function ProductPagination({title, filterType}){
+export default function ProductPagination({title, filtering, items, isLoading}){
 
-   // Retrieve sale centers and necessary functions from the context
-    const {saleCenters, getSaleCenter} = useSalesContext();
+
     const [slideView, setSlideView] = useState(4); 
-
-    // Fetch sale centers when component mounts
-    useEffect(() => {
-       getSaleCenter("resturants");
-      },[]);
-      
-      const items = saleCenters.sort((a,b) => b.data[filterType] - a.data[filterType]);
+   
 
       // Adjust slide view based on window width
       useEffect(()=>{
@@ -41,27 +34,32 @@ export default function ProductPagination({title, filterType}){
             window.removeEventListener("resize", changeWidht);
          };
        },[]);
-
+      
 
        return (
-         <div className="my-20">
+          <div className="my-20">
              {/* Render pagination section title */}
              <p className="text-2xl font-bold">{title}</p>
              {/* Render Swiper component for pagination */}
-             <Swiper 
-                 className="scroll-smooth sm: h-fit mt-7 flex items-center justify-center" 
-                 modules={[Navigation, A11y]}
-                 spaceBetween={30}
-                 slidesPerView={slideView}
-                 navigation
-             >
-                 {/* Map through saleCenters and render each as a SwiperSlide */}
-                 {saleCenters?.sort((a, b) => b.data[filterType] - a.data[filterType]).map(item => (
-                     <SwiperSlide key={item.id}>
-                         <ResturantInfo item={item}/>
-                     </SwiperSlide>
-                 ))}
-             </Swiper>
-         </div>
+             {
+               isLoading ? 
+               <CardSkelton quntite={slideView}/>:
+               <Swiper 
+               className="scroll-smooth sm: h-fit mt-7 flex items-center justify-center" 
+               modules={[Navigation, A11y]}
+               spaceBetween={30}
+               slidesPerView={slideView}
+               navigation
+           >
+               {/* Map through saleCenters and render each as a SwiperSlide */}
+               {items?.sort((a, b) => b[filtering] - a[filtering]).map(item => (
+                   <SwiperSlide key={item.id}>
+                       <ResturantInfo item={item}/>
+                   </SwiperSlide>
+               ))}
+           </Swiper>
+             }
+
+       </div>
      );
     };

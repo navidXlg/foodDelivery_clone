@@ -16,7 +16,7 @@ export default function NavabarHome(){
 
 
    return (
-    <div className="flex items-center justify-between p-8 relative z-30">
+    <div className="flex items-center justify-between p-8 relative z-30" data-testid = 'navbar-home'>
       <div className="items-center gap-3 font-semibold hidden md:flex">
         <Link to="/saleSubmit" data-testid ='changPage'>
           {/* Button for registering sellers */}

@@ -1,36 +1,36 @@
-import {superMarket,other, fruit, iceCream, nut, sweet, cafe, resturants} from ".././appWriteConfig";
-
-
-export default function useProductIdApp({product}){
-
+ import {superMarket,other, fruit, iceCream, nut, sweet, cafe, resturants} from ".././appWriteConfig";
+ 
+ 
+ 
+ 
+ export function productId (product){
     let colllectionID ; 
     switch (product){
-         case product === "superMarket":
+         case "superMarket":
             colllectionID = superMarket
            break;
-           case product === "other":
+           case "other":
             colllectionID = other
            break;
-           case product === "fruit":
+           case "fruit":
             colllectionID = fruit
            break;
-           case product === "nut":
+           case "nut":
             colllectionID = nut
            break;
-           case product === "iceCream":
+           case "iceCream":
             colllectionID = iceCream
            break;
-           case product === "cafe":
+           case "cafe":
             colllectionID = cafe
            break;
-           case product === "resturants":
+           case "resturants":
             colllectionID = resturants
            break;
-           case product === "sweet":
+           case "sweet":
             colllectionID = sweet
            break;
     };
 
     return colllectionID;
-};
-
+}

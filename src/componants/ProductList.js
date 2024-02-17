@@ -25,7 +25,7 @@ export default function ProductList ({className}){
 
     
     let salseCenterFinal;
-    loaction.pathname.includes("resturants") && salesCenterFilter ? salseCenterFinal = saleCenters.filter(item => item.data.filtering === salesCenterFilter):
+    loaction.pathname.includes("resturants") && salesCenterFilter ? salseCenterFinal = saleCenters.filter(item => item.filtering === salesCenterFilter):
     salseCenterFinal = saleCenters;
     
 
@@ -39,7 +39,7 @@ export default function ProductList ({className}){
                 className = "w-fit"/>
                 <div className="flex items-center justify-start gap-3 flex-wrap">
                     {
-                        salseCenterFinal.length > 0 ? salseCenterFinal.map(item => <ResturantInfo key={item.data.id} item = {item}/>):
+                        salseCenterFinal.length > 0 ? salseCenterFinal.map(item => <ResturantInfo key={item.id} item = {item}/>):
                         <p className="font-bold mx-auto mt-28 text-xl text-purpleSnapp-300">موردی برای نمایش وجود ندارد . </p>
                     }
                 </div>
