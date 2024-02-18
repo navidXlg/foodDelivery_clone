@@ -22,7 +22,7 @@ export default function PrivateRoutes(){
             {activeAccount ? (
                 <Outlet />
             ) : (
-                <Navigate to="/login" />
+                <Navigate to="/" />
             )}
         </div>
     );

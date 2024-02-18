@@ -12,13 +12,25 @@ import { IoMdExit } from "react-icons/io";
 import { ClipLoader } from "react-spinners";
 import MapModel from "../../componants/map/MapModel";
 import SearchBar from "../../componants/utils/SearchBar";
+import useMapContext from "../../Hooks/useMapContext";
 
 
 export default function MainNavbar(){
 
     const {model, setModel} = useAuthContext();
     const {activeAccount, logOut, isLoading} = useAuthContext();
+    const {addres} = useMapContext()
 
+
+    function truncateText(text, maxLength) {
+        if (text.length > maxLength) {
+            // Truncate the text and add ellipsis
+            return text.substring(0, maxLength - 3) + "...";
+        } else {
+            // Return the original text if it's within the limit
+            return text;
+        }
+    }
 
     return <div className="fixed transform right-1/2 translate-x-1/2  w-full max-w-screen-2xl pb-5 pt-3 top-0 px-4 sm:px-11 border-b-2 z-40 bg-white border-gray-100 shadow-sm">
           <div className="flex justify-between md:grid grid-cols-4 justify-items-start  items-center">
@@ -28,7 +40,11 @@ export default function MainNavbar(){
                 className="flex items-center gap-2 cursor-pointer" 
                 onClick={() => setModel("map")}>
                     <TbCurrentLocation className="text-gray-400 size-5"/>
-                    <p className="font-semibold">برای تغییر آدرس خود کلیک کنید</p>
+                    <p className="text-sm text-gray-600">
+                        {
+                        addres ? truncateText(addres, 65) :  " آدرس خود راوارد کنید . "
+                        }
+                    </p>
                 </div>
             </div>
              <SearchBar/>   

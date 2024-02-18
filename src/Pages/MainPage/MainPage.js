@@ -34,7 +34,7 @@ export default function MainPage() {
                 <ProductPagination title="برترین ها" filtering="rating" isLoading = {isLoading} items = {saleCenters}/>
                 <ProductPagination title="مزه های خاص" filtering="rating" isLoading = {isLoading} items = {saleCenters}/>
             </div>
-            <div dir="ltr">
+            <div dir="ltr" className='max-w-screen-2xl'>
                 <SalesCenters/>
             </div>
             <Footer/>

@@ -14,7 +14,7 @@ const ProductCenterPage = lazy(() => import("./Pages/ProductCenterPage"));
 
 export default function App (){
 
-// Set up BrowserRouter to enable routing
+
   return <BrowserRouter>
           <Routes>
             <Route path = "/" element = {<SuspenseLoading page={<HomePage/>}/>}/>

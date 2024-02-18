@@ -4,7 +4,7 @@ import { Icon } from "leaflet";
 import { ID } from "appwrite";
 import { DATABASE_ID, LOACTION_COLLECTION, databases } from "../appWriteConfig";
 import useAuthContext from "../Hooks/useAuthContext";
-
+import axios from "axios";
 
 // Create a new context for map-related data
 export const mapContext = createContext();
@@ -15,6 +15,7 @@ export default function MapProvider({children}){
 
     const [draggable, setDraggable] = useState(false);
     const [isLoading, setIsloading] = useState(false);
+    const [addres, setAddres] = useState("");
     const [error, setError] = useState(false);
     // latitiue and lngtitue fot tehran 
     const [position, setPosition] = useState({
@@ -42,18 +43,53 @@ export default function MapProvider({children}){
     const setClientLocation = async () => {
         setIsloading(true);
         try{
-             await databases.createDocument(DATABASE_ID, LOACTION_COLLECTION, ID.unique(),
+            const addresFarsi  = await fetchReverseGeocoding(position.lat, position.lng );
+            await databases.createDocument(DATABASE_ID, LOACTION_COLLECTION, ID.unique(),
             {
                 user_id : activeAccount?.$id,
                 latitiue : position.lat,
-                lngtitue : position.lng
+                lngtitue : position.lng,
+                addres : addresFarsi
             });
+            setAddres(addresFarsi)
+
         }catch(error){
             setError(error);
         }finally{
             setIsloading(false)
         }
     };
+    
+     const fetchReverseGeocoding =  async (lat , lng) => {
+        const url = 'https://api.exoapi.dev/reverse-geocoding';
+        const apiKey = "f3e0e18d014945a6b0458807f9cf4c00-bb7d15acab7345bd90ce804a5fac58fe";
+        const locale = 'en-GB';
+    
+        const data = new URLSearchParams();
+        data.append('lat', lat);
+        data.append('lon', lng);
+        data.append('locale', locale);
+    
+        const config = {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': `Bearer ${apiKey}`
+            }
+        };
+    
+        try {
+            const response = await axios.post(url, data, config);
+            const {city, region, street, houseNumber} = response.data
+            const addres =  street + houseNumber
+            return addres;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+
+
+
 
     const mapData = {
         draggable,
@@ -63,7 +99,8 @@ export default function MapProvider({children}){
         setPosition, 
         findLoaction, 
         housingIcon,
-        setClientLocation
+        setClientLocation,
+        addres
     };
 
 
