@@ -20,7 +20,6 @@ const nut = '65cf29ca5503ec46df9a';
 const sweet = '65cf1fd6030b1d52045f';
 const cafe = '65cf16a50a64dd540803';
 const resturants = '65ce89cbec324aa9b923';
-const geoTehran = "f3e0e18d014945a6b0458807f9cf4c00-bb7d15acab7345bd90ce804a5fac58fe";
 
 
 client

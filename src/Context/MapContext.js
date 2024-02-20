@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import {useState} from "react";
 import { Icon } from "leaflet";
 import { ID } from "appwrite";
@@ -15,6 +15,7 @@ export default function MapProvider({children}){
 
     const [draggable, setDraggable] = useState(false);
     const [isLoading, setIsloading] = useState(false);
+    const {setModel} = useAuthContext();
     const [addres, setAddres] = useState("");
     const [error, setError] = useState(false);
     // latitiue and lngtitue fot tehran 
@@ -23,6 +24,12 @@ export default function MapProvider({children}){
         lng:51.3347
     });
     const {activeAccount} = useAuthContext();
+
+    useEffect(() => {
+        activeAccount && onLoadLoaction(activeAccount.$id) ;
+    },[activeAccount])
+
+
 
     // Function to find user's location using geolocation API
     const findLoaction = () => {
@@ -51,7 +58,8 @@ export default function MapProvider({children}){
                 lngtitue : position.lng,
                 addres : addresFarsi
             });
-            setAddres(addresFarsi)
+            setAddres(addresFarsi);
+            setModel(false)
 
         }catch(error){
             setError(error);
@@ -86,6 +94,18 @@ export default function MapProvider({children}){
             console.error('Error:', error);
         }
     };
+
+    const onLoadLoaction = async (documetnId) => {
+
+        console.log(documetnId)
+        try {
+            const response  = await databases.getDocument(DATABASE_ID, LOACTION_COLLECTION, documetnId);
+            setAddres()
+                }
+        catch(error){
+            console.log(error)
+        }
+    }
 
 
 

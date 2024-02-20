@@ -21,7 +21,7 @@ export default function SalesProvider({children}){
     });
     const [saleCenters, setSaleCenter] = useState([]);
     const [salesCenterFilter,setSalesCenterFilter] = useState("");
-    const [pricefilter, setPriceFilter] = useState("");
+    const [pricefilter, setPriceFilter] = useState(null);
 
     // useEffect(() => {
     //     if(pricefilter !== "all"){

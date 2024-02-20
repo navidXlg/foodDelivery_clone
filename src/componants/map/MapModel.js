@@ -23,6 +23,8 @@ export default function MapModel(){
         };
       }, []);
 
+
+
       return ReactDOM.createPortal(
         <div>
           <div
@@ -38,7 +40,7 @@ export default function MapModel(){
           <Map className = "w-full h-72"/>
           <Button onClick = {setClientLocation} snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">
             {
-               isLoading ? <BeatLoader  color="rgba(232, 232, 232, 1)" margin={1} size={12} speedMultiplier={1} />
+               isLoading ? <BeatLoader  color="rgba(232, 232, 232, 1)" margin={1} size={12} speedMultiplier ={1} />
                :"تایید"
             }
             </Button>

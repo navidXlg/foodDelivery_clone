@@ -263,19 +263,15 @@ export const productFilterOptions = [
 export const dataFilterConig = [
   {
       label : "همه",
-      value : "all"
+      value : null
   },
   {
       label : "اقتصادی",
-      value : "is_economical"
-  },
-  {
-      label : "متوسط",
-      value : "avrage"
+      value : true
   },
   {
       label : "گران",
-      value : !"is_economical"
+      value : false
   },
 ];
 export const orderPropertiesconfig = [

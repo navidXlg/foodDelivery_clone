@@ -21,7 +21,7 @@ export default function MainNavbar(){
     const {activeAccount, logOut, isLoading} = useAuthContext();
     const {addres} = useMapContext()
 
-
+    console.log(addres);
     function truncateText(text, maxLength) {
         if (text.length > maxLength) {
             // Truncate the text and add ellipsis
@@ -42,7 +42,7 @@ export default function MainNavbar(){
                     <TbCurrentLocation className="text-gray-400 size-5"/>
                     <p className="text-sm text-gray-600">
                         {
-                        addres ? truncateText(addres, 65) :  " آدرس خود راوارد کنید . "
+                        addres ? truncateText(addres, 650) :  " آدرس خود راوارد کنید . "
                         }
                     </p>
                 </div>
