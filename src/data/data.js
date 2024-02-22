@@ -277,20 +277,22 @@ export const dataFilterConig = [
 export const orderPropertiesconfig = [
   {
       label:"پیک اسنپ‌فود",
+      value : 'deliver'
   },
   {
       label:"دارای کوپن",
+      value : 'has_coupon'
   },
   {
-      label:"دارای تخفیف",
+      label:"دایر",
+      value : "is_open"
   },
   {
       label:"فودپرو",
-  },
-  {
-      label:"به‌صرفه",
+      value : "is_express"
   },
   {
       label:"خوش‌قیمت",
+      value : "is_eco"
   },
 ];

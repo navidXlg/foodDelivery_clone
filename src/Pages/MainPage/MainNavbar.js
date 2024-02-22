@@ -21,7 +21,6 @@ export default function MainNavbar(){
     const {activeAccount, logOut, isLoading} = useAuthContext();
     const {addres} = useMapContext()
 
-    console.log(addres);
     function truncateText(text, maxLength) {
         if (text.length > maxLength) {
             // Truncate the text and add ellipsis

@@ -14,7 +14,9 @@ export default function ProductList ({className}){
 
 
     const {filterProducts, setFilterProducts} = useOrderContext();
-    const {getSaleCenter, saleCenters, pricefilter,  isLoading, salesCenterFilter} = useSalesContext();
+
+    const {getSaleCenter, saleCenters, pricefilter,orderProp, isLoading, salesCenterFilter} = useSalesContext();
+
     const {productID} = useParams();
     const loaction = useLocation();
     useScrollToTop();
@@ -22,22 +24,43 @@ export default function ProductList ({className}){
     useEffect(() =>{
         getSaleCenter(productID);
     },[loaction.pathname, salesCenterFilter]);
-
-    console.log(salesCenterFilter)
     
     let salseCenterFinal;
     loaction.pathname.includes("resturants") && salesCenterFilter ? salseCenterFinal = saleCenters.filter(item => item.filtering === salesCenterFilter):
     salseCenterFinal = saleCenters;
 
-    const salom =() => {
+    const salom = () => {
+
         if (pricefilter){
             return salseCenterFinal.filter(item => item.is_eco === pricefilter);
         }
-    
         return salseCenterFinal;
     };
 
     const all = salom();
+
+    const abab = all.filter(item => {
+        for (let propItem of orderProp){
+            if(propItem === "deliver" && item.deliver !== true){
+                return false;
+            }
+            if(propItem === "has_coupon" && item.has_coupon !== true){
+                return false;
+            }
+            if(propItem === "is_open" &&  item.is_open !== true){
+                return false;
+            }
+            if(propItem === "is_express" && item.is_express !== true ){
+                return false;
+            }
+            if(propItem === "is_eco" && item.is_eco !== true ){
+                return false;
+            }
+        }
+        return true
+    });
+
+    console.log(abab)
 
     return  <div className={`flex flex-col gap-4 ${className}`}>
              {
@@ -49,7 +72,7 @@ export default function ProductList ({className}){
                 className = "w-fit"/>
                 <div className="flex items-center justify-start gap-3 flex-wrap">
                     {
-                        all.length > 0 ? salseCenterFinal.map(item => <ResturantInfo key={item.id} item = {item}/>):
+                        abab.length > 0 ? salseCenterFinal.map(item => <ResturantInfo key={item.id} item = {item}/>):
                         <p className="font-bold mx-auto mt-28 text-xl text-purpleSnapp-300">موردی برای نمایش وجود ندارد . </p>
                     }
                 </div>

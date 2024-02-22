@@ -47,7 +47,7 @@ function Dropdown({ options, value, onChange, title, className }) {
 
 
   return (
-    <div ref={divEl} className ={`text-gray-600 border-2 py-4 relative ${className}`}>
+    <div ref={divEl} className ={`z-50  text-gray-600 border-2 py-4 relative ${className}`}>
       <div
         className="flex justify-between mx-2 gap-4 items-center cursor-pointer"
         onClick={handleClick}>

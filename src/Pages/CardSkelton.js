@@ -1,9 +1,9 @@
 
-export default function  CardSkelton({quntite}){
+export default function  CardSkelton({quntite, classname}){
 
   const items = new Array(quntite).fill(0);
-
-  return <div className="flex items-center justify-start gap-8 flex-wrap">
+const nav = `vadpdp`
+  return <div className={`flex items-center justify-start gap-8 flex-wrap ${classname}`}>
     {
       items.map(item =><div className="flex items-center space-x-4 animate-pulse">
       <div className="w-[320px] h-[475px] rounded shadow-lg min-w-80 bg-gray-100">

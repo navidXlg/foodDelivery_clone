@@ -43,7 +43,7 @@ export default function ProductPagination({title, filtering, items, isLoading}){
              {/* Render Swiper component for pagination */}
              {
                isLoading ? 
-               <CardSkelton quntite={slideView}/>:
+               <CardSkelton quntite={slideView - 1} classname="mt-5 items-center"/>:
                <Swiper 
                className="scroll-smooth sm: h-fit mt-7 flex items-center justify-center" 
                modules={[Navigation, A11y]}

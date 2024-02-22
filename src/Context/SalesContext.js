@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { DATABASE_ID, SALESCENTER_COLLECTION, databases, superMarket,other, fruit, iceCream, nut, sweet, cafe, resturants } from "../appWriteConfig";
+import { DATABASE_ID, SALESCENTER_COLLECTION, databases} from "../appWriteConfig";
 import { ID } from "appwrite";
 import { productId } from "../Hooks/ProductIdApp";
 
@@ -22,6 +22,7 @@ export default function SalesProvider({children}){
     const [saleCenters, setSaleCenter] = useState([]);
     const [salesCenterFilter,setSalesCenterFilter] = useState("");
     const [pricefilter, setPriceFilter] = useState(null);
+    const [orderProp, setOrderProp] = useState([]);
 
     // useEffect(() => {
     //     if(pricefilter !== "all"){
@@ -79,6 +80,16 @@ export default function SalesProvider({children}){
         }
     };
 
+        // Function to toggle order properties
+    const setProductProperties = (label) => {
+        if(orderProp.includes(label)){
+            setOrderProp(orderProp.filter(item => item !== label));
+        }else{
+            setOrderProp([...orderProp, label])
+        }
+    };
+
+
 
     const saleData = {
         jobTitle,
@@ -91,14 +102,17 @@ export default function SalesProvider({children}){
         homeTown,
         handelFormChange, 
         setHomeTown,
+        setProductProperties,
         isFormComplete,
         salesCredential,
         handelSalseFromSubmit,
-        pricefilter, 
+        pricefilter,
+        orderProp,
+        setOrderProp, 
         setPriceFilter,
         getSaleCenter
     };
-
+ 
     return <salesContext.Provider value={saleData}>
                 {children}
            </salesContext.Provider>
