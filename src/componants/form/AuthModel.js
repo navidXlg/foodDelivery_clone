@@ -33,7 +33,7 @@ export default function AuthModel(){
       </div>
       <div dir='rtl' className="fixed animate-drop-slow inset-x-14 sm:inset-x-1/4 lg:inset-x-1/3 top-24 max-h-fit px-8 py-4 rounded-lg shadow-md bg-gray-50 flex flex-col">
         <div className='flex justify-between items-center'>
-          <IoMdClose className = "cursor-pointer" 
+          <IoMdClose className = "cursor-pointer hover:animate-bounce" 
           onClick={() => setModel(false)}/>
           <SnappLogo className="size-14"/>
         </div>

@@ -16,7 +16,7 @@ export default function UserLogIn (){
 
     // Function to handle form submission
     const formLogIn = (credentials) => {
-      logIn(credentials)
+      logIn(credentials);
     };
 
             
@@ -31,7 +31,7 @@ export default function UserLogIn (){
               {error && (
                   <div className="text-red-900 font-bold flex gap-2 items-center justify-center mb-3">
                       <FaRegFaceFrown />
-                         {error.message}
+                      {error}
                   </div>
               )}
               <Button snapp rounded btnHover className="text-white relative w-full">

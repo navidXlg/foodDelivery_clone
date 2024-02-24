@@ -25,7 +25,7 @@ export default function CustomerSubPage() {
                 <SubmitionForm/> 
             </div>
             {/* Information section */}
-            <div className="text-center px-10 xl:px-24 2xl:px-56" dir="rtl">
+            <div className="text-center px-10 xl:px-24 2xl:px-56 max-w-screen-2xl mx-auto" dir="rtl">
                 <SnappFoodBenifit/> 
                 <SubmitionInfo/> 
                 <InfoTable/> 

@@ -14,7 +14,7 @@ export default function Footer(){
 
   
   return (
-    <div data-testid="footer" className="bg-gray-100 px-12 py-24 mt-5" dir="rtl">
+    <div data-testid="footer" className="max-w-screen-2xl mx-auto bg-gray-100 px-12 py-24 mt-5" dir="rtl">
         <div className="flex flex-col items-center md:items-start md:flex-row gap-16 text-center md:gap-0 justify-between max-w-7xl 2xl:mx-auto">
             <div>
                 <div className="flex items-center md:justify-between gap-4">

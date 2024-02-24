@@ -52,6 +52,7 @@ export default function AuthProvider({children}){
             await account.createEmailSession(email, password);
             const acc = await account.get();
             setActiveAccount(acc);
+            setModel(null);
         } catch (error) {
             setError(error.message);
         } finally {

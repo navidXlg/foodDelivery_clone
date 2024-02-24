@@ -12,7 +12,7 @@ export default function ProductFilter({className}){
     const location = useLocation();
     return (
         // Container for product filters
-        <div className={`flex flex-col items-center gap-5 ${className}`}>
+        <div className={`flex flex-col items-center px-3 gap-5 ${className}`}>
             {/* Display GroupingVertical filter only if the route includes "restaurants" */}
             {location.pathname.includes('resturants') && <GroupingVertical />}
             {/* Display PriceClass filter */}

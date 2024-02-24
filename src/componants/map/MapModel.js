@@ -29,13 +29,13 @@ export default function MapModel(){
         <div>
           <div
             onClick={() => setModel(false)}
-            className="fixed inset-0 z-40 bg-gray-300 opacity-65"
+            className="fixed inset-0  z-40 bg-gray-300 opacity-65"
           ></div>
-          <div dir="rtl" className="animate-drop-slow rounded-lg shadow-md fixed inset-x-1/4 top-16 max-h-fit p-10 bg-white z-40">
+          <div dir="rtl" className="max-w-3xl animate-drop-slow rounded-lg shadow-md fixed inset-x-[10%] md:inset-x-1/4 top-16 max-h-fit p-10 bg-white z-40">
           <IoMdClose className = "cursor-pointer" onClick={() => setModel(null)}/>
-          <p className = "text-2xl font-semibold mt-8">انتخاب آدرس</p>
+          <p className = "text-xl lg:text-2xl font-semibold mt-8">انتخاب آدرس</p>
           <div className="flex items-center justify-between">
-            <p className = "my-4  text-sm text-gray-700">برای مشاهده مناسب‌ترین پیشنهادها به شما، وموقعیت خود را مشخص کنید<br/>روی مارکر کلیک کنید وآن را فعال کنید</p>
+            <p className = "my-4  text-xs lg:text-sm text-gray-700">برای مشاهده مناسب‌ترین پیشنهادها به شما، وموقعیت خود را مشخص کنید<br/>روی مارکر کلیک کنید وآن را فعال کنید</p>
           </div>
           <Map className = "w-full h-72"/>
           <Button onClick = {setClientLocation} snapp className = "w-full rounded-md mt-2 text-lg font-semibold text-white">

@@ -32,7 +32,7 @@ export default function HomePage(){
                 <Hero />
                 <ProductsCatgory
                 onClick = {() => setModel("auth")} 
-                className = "absolute bottom-36 transform py-3 px-5 translate-x-1/2 translate-y-1/2 right-1/2 z-40"/>
+                className = "absolute bottom-36 transform  py-3 px-5 translate-x-1/2 translate-y-1/2 right-1/2 w-[87%] z-40"/>
               </section>
               <GroupingCard onClick = {() => setModel("auth")}/>
               <SalesCenters/>

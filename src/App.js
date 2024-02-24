@@ -17,12 +17,12 @@ export default function App (){
 
   return <BrowserRouter>
           <Routes>
-            <Route path = "/" element = {<SuspenseLoading page={<HomePage/>}/>}/>
-            <Route path ="/saleSubmit" element = {<SuspenseLoading page={<CustmorSubPage/>}/>}/>
+            <Route path = "/" element = {<SuspenseLoading page = {<HomePage/>}/>}/>
+            <Route path ="/saleSubmit" element = {<SuspenseLoading page = {<CustmorSubPage/>}/>}/>
 
             {/* Use PrivateRoutes component to handle protected routes */}
             <Route element = {<PrivateRoutes/>}>
-              <Route path = "/ProductPage/:productID"  element = {<SuspenseLoading page={<ProductCenterPage/>}/>}/>
+              <Route path = "/ProductPage/:productID"  element = {<SuspenseLoading page ={<ProductCenterPage/>}/>}/>
               <Route path = "/mainPage"  element = {<SuspenseLoading page={<MainPage/>}/>}/>
             </Route>
             <Route path="*" element = {<ErrorPage/>}/>

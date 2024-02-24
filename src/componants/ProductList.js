@@ -60,17 +60,16 @@ export default function ProductList ({className}){
         return true
     });
 
-    console.log(abab)
 
     return  <div className={`flex flex-col gap-4 ${className}`}>
              {
                 isLoading ? 
                 <CardSkelton quntite={7} />:
                 <>
-                <Dropdown title = "به ترتیب پیش فرض" onChange={setFilterProducts}
+                {/* <Dropdown title = "به ترتیب پیش فرض" onChange={setFilterProducts}
                 value ={filterProducts} options={productFilterOptions}
-                className = "w-fit"/>
-                <div className="flex items-center justify-start gap-3 flex-wrap">
+                className = "w-fit"/> */}
+                <div className="flex items-center  justify-center gap-3 flex-wrap">
                     {
                         abab.length > 0 ? salseCenterFinal.map(item => <ResturantInfo key={item.id} item = {item}/>):
                         <p className="font-bold mx-auto mt-28 text-xl text-purpleSnapp-300">موردی برای نمایش وجود ندارد . </p>

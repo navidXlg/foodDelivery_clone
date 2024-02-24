@@ -9,7 +9,7 @@ import Button from "../../componants/utils/Button";
  */
 export default function NavbarSub() {
     return (
-        <div data-testid = 'navigation' className="pt-6 flex items-center justify-between max-w-screen-2xl 3xl:mx-auto">
+        <div data-testid = 'navigation' className="pt-6  flex items-center justify-between max-w-screen-2xl 3xl:mx-auto">
             <ul className="hidden items-center gap-8 font-bold lg:flex">
                 {navbarSubItems.map((item) => (
                     <li

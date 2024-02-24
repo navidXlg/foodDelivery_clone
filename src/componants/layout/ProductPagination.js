@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useEffect, useState } from "react";
 import CardSkelton from "../../Pages/CardSkelton";
 
 
@@ -12,29 +11,6 @@ import CardSkelton from "../../Pages/CardSkelton";
 export default function ProductPagination({title, filtering, items, isLoading}){
 
 
-    const [slideView, setSlideView] = useState(4); 
-   
-
-      // Adjust slide view based on window width
-      useEffect(()=>{
-      window.addEventListener("resize", changeWidht);
-         function changeWidht(){
-            const width = window.innerWidth;
-            if (1200 <= width && width < 1500) {
-               setSlideView(3);
-            } else if (850 <= width && width < 1200) {
-               setSlideView(2);
-            } else if (width < 850) {
-               setSlideView(1);
-            }else if(width >1500){
-               setSlideView(4);
-            }
-         };
-         return () => {
-            window.removeEventListener("resize", changeWidht);
-         };
-       },[]);
-      
 
        return (
           <div className="my-20">
@@ -43,17 +19,39 @@ export default function ProductPagination({title, filtering, items, isLoading}){
              {/* Render Swiper component for pagination */}
              {
                isLoading ? 
-               <CardSkelton quntite={slideView - 1} classname="mt-5 items-center"/>:
-               <Swiper 
-               className="scroll-smooth sm: h-fit mt-7 flex items-center justify-center" 
+               <CardSkelton quntite={4} classname="mt-5 items-center"/>:
+               <Swiper  
+               className="scroll-smooth sm:h-fit mt-14 pr-10" 
                modules={[Navigation, A11y]}
                spaceBetween={30}
-               slidesPerView={slideView}
+               slidesPerView={4}
                navigation
+               breakpoints={{
+                  // when window width is >= 320px
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                  },
+                  // when window width is >= 768px
+                  850: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                  },
+                  // when window width is >= 1024px
+                  1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 50
+                  },
+                  // when window width is >= 1024px
+                  1500: {
+                     slidesPerView: 4,
+                     spaceBetween: 50
+                  }
+                }}
            >
                {/* Map through saleCenters and render each as a SwiperSlide */}
                {items?.sort((a, b) => b[filtering] - a[filtering]).map(item => (
-                   <SwiperSlide key={item.id}>
+                   <SwiperSlide key={item.id} >
                        <ResturantInfo item={item}/>
                    </SwiperSlide>
                ))}
